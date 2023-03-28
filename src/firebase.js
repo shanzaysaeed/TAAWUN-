@@ -3,12 +3,12 @@ import { getAuth } from "firebase/auth"
 
 
 const firebaseConfig = {
-  apiKey: process.env.apiKey,
-  authDomain: process.env.authDomain ,
-  projectId: process.env.projectId ,
-  storageBucket: process.env.storageBucket ,
-  messagingSenderId: process.env.messagingSenderId ,
-  appId: process.env.appId 
+  apiKey: "AIzaSyCzU5-F0EGkVgJhbupm8bFimSZnpujn5ig",
+  authDomain: "taawun-cs360.firebaseapp.com",
+  projectId: "taawun-cs360",
+  storageBucket: "taawun-cs360.appspot.com",
+  messagingSenderId: "37380458180",
+  appId: "1:37380458180:web:d14c61b2071c02ad4f6b91"
 };
 
 // Initialize Firebase

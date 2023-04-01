@@ -1,6 +1,9 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { getAuth } from "firebase/auth"
 import { getFirestore } from "firebase/firestore";
+import { getAnalytics } from "firebase/analytics";
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyCn1LSaEmPjYu-Sldexzd1rIznZUCElADw",
   authDomain: "createvolunteer.firebaseapp.com",
@@ -13,5 +16,9 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const db = getFirestore(app);
+
+export const auth = getAuth(app)
+export const db = getFirestore(app);
+export const analytics = getAnalytics(app);
+
+

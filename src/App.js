@@ -3,6 +3,7 @@ import Signin from './components/Signin';
 import Signup from './components/Signup';
 import Account from './components/Account';
 import Admin from './components/Admin';
+import Landing from './components/Landing';
 import { Route, Routes } from 'react-router-dom';
 import { AuthContextProvider } from './contexts/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -15,6 +16,7 @@ function App() {
       </h1> */}
       <AuthContextProvider>
         <Routes>
+          <Route path='/' element={<Landing />} />
           <Route path='/signin' element={<Signin />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/admin' element={<Admin />} />

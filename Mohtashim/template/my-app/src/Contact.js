@@ -1,11 +1,11 @@
 import React from "react";
 // import { useHistory } from "react-router-dom";
-import { db } from "../firebaseConfig";
+import { db } from "./firebaseConfig";
 import { useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { Link } from "react-router-dom";
 // import ContactNext from "./ContactNext";
-import "./my.css";
+// import "./my.css";
 
 const Contact = () => {
   const [title, setTitle] = useState();

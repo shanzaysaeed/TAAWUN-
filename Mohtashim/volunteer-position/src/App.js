@@ -1,15 +1,20 @@
-// import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 import Contact from './components/Contact';
-// import Bruh from './components/Bruh';
+import ContactNext from './components/ContactNext';
+import LeftMenuBar from './LeftMenuBar';
+
 
 function App() {
   return (
-    <div className="App">
-      <Contact/>
-      {/* <Bruh></Bruh> */}
-    </div>
-  ); 
+    <>
+        <Routes>
+          <Route path='/' element={<LeftMenuBar/>}></Route>
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/contactnext' element={<ContactNext />} />
+        </Routes>
+    </>
+  );
 }
 
 export default App;

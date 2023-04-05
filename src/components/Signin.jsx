@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserAuth } from '../contexts/AuthContext';
+import { db } from '../firebase';
+import { collection, query, where, getDocs } from "firebase/firestore";
+
 
 const Signin = () => {
   const [email, setEmail] = useState('');
@@ -11,14 +14,21 @@ const Signin = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('')
+    const ngoRef = collection(db, "users");
+    const q = query(ngoRef, where("email", "==", email), where("verification", "==", "True"));
+    const querySnapshot = await getDocs(q);
+    if (querySnapshot.empty) {
+      setError("Your profile has not been verified yet.");
+      console.log(error)
+      return;
+    }
+    setError('');
     try {
       await signIn(email, password)
       navigate('/account')
     } catch (e) {
       setError(e.message)
-      console.log(error)
-    }
+    }   
   };
 
   return (

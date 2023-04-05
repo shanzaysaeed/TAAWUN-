@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { collection, setDoc, doc } from "firebase/firestore";
-import { db, storage } from '../firebase';
+import { db, storage } from '../../firebase';
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import PartenerSideBar from '../../views/PartenerSideBar';
 
-function Test() {
+function NgoSignup() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
@@ -98,7 +99,7 @@ function Test() {
             role: "NGO"
           });
     
-          navigate('/signin')
+          navigate('/ngo_signin')
         } catch (e) {
           setError(e.message);
           console.log(error);
@@ -114,15 +115,7 @@ function Test() {
 
   return (
     <div className="flex bg-purple-300 h-screen w-screen">
-      <div className="fixed h-full w-60 p-4 top-8 left-0">
-        <h2 className="text-center text-lg font-bold my-4">Our Partners</h2>
-        <div className="flex flex-col items-center">
-          <img src="../components/akhuwat.png" alt="Partner 1" className="w-24 h-24 mb-8" />
-          <img src="../components/jdc.png" alt="Partner 2" className="w-24 h-24 mb-8" />
-          <img src="../components/edhhi.png" alt="Partner 3" className="w-24 h-24 mb-8" />
-          <img src="../components/Chhipa.png" alt="Partner 4" className="w-24 h-24 mb-8" />
-        </div>
-      </div>
+      <PartenerSideBar/>
       <div className="fixed top-10 right-0 bottom-10 left-60 bg-white rounded-2xl flex">
         <div className="w-full flex flex-col justify-center items-center">
             <img src="../components/logo_Final.png" alt="Logo" className="w-40 h-40 mb-2" />
@@ -201,12 +194,12 @@ function Test() {
             </form>
         </div>
 
-        <div className="w-1/4 flex justify-center items-center">
-          <img src="../components/signup.png" alt="Image" className="w-full h-full" />
+        <div className="w-1/3 flex justify-center items-center">
+          <img src="../components/signup.png" alt="signup" className="w-full h-full" />
         </div>
       </div>
     </div>
   );
 }
 
-export default Test;
+export default NgoSignup;

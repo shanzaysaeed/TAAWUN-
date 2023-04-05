@@ -1,7 +1,6 @@
 import React from 'react'
-import './styles/landing.css';
 
-const Sidebar = () => {
+const PartenerSideBar = () => {
     return (
       <div className="fixed h-full w-60 p-4 top-8 left-0">
         <h2 className="text-center text-lg font-bold my-4">Our Partners</h2>
@@ -16,4 +15,4 @@ const Sidebar = () => {
   };
   
 
-export default Sidebar
+export default PartenerSideBar

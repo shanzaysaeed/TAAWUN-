@@ -1,155 +1,96 @@
-// import React from 'react';
+import { useState } from "react";
+import { Container, Navbar, Row, Col } from "react-bootstrap";
+import AddBook from "./components/AddBook";
+import BooksList from "./components/BooksList";
+import "./App.css";
 
-// const styles = {
-//   container: {
-//     backgroundColor: '#D5C6FF',
-//     height: '100vh',
-//     display: 'flex',
-//   },
-//   buttonContainer: {
-//     display: 'flex',
-//     flexDirection: 'column',
-//     justifyContent: 'center',
-//     alignItems: 'stretch',
-//     padding: '0 20px',
-//     width: '180px',
-//     backgroundColor: 'white',
-//   },  
-//   button: {
-//     backgroundColor: 'white',
-//     padding: '5px 5px',
-//     borderRadius: '20px',
-//     cursor: 'pointer',
-//     marginBottom: '10px',
-//     //textAlign: 'left',
-//   },
-//   button1: {
-//     backgroundColor: 'white',
-//     padding: '5px 5px',
-//     borderRadius: '20px',
-//     cursor: 'pointer',
-//     marginBottom: '80px',
-//   },
-//   logout: {
-//       backgroundColor: 'red',
-//       padding: '10px 50px',
-//       borderRadius: '10px',
-//       cursor: 'pointer',
-//       marginBottom: '10px',
-//     },
-// };
+function App() {
+  const [bookId, setBookId] = useState("");
 
-// const HomePage = () => {
-//   return (
-//     <div style={styles.container}>
-//       <div style={styles.buttonContainer}>
-//         <button style={styles.button}>Home</button>
-//         <button style={styles.button}>Campaigns</button>
-//         <button style={styles.button}>Collaborations</button>
-//         <button style={styles.button}>Donation Applications</button>
-//         <button style={styles.button}>Donation History</button>
-//         <button style={styles.button}>Map View</button>
-//         <button style={styles.button}>Volunteer Position</button>
-//         <button style={styles.button1}>Settings</button>
-//         <button style={styles.logout}>Log Out</button>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default HomePage;
-import React from 'react';
-
-const styles = {
-  container: {
-    backgroundColor: '#D5C6FF',
-    height: '100vh',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  buttonContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'stretch',
-    padding: '0 20px',
-    width: '150px',
-    backgroundColor: 'white',
-  },  
-  button: {
-    backgroundColor: 'white',
-    padding: '5px 5px',
-    borderRadius: '5px',
-    cursor: 'pointer',
-    marginBottom: '10px',
-  },
-  button1: {
-    backgroundColor: 'white',
-    padding: '5px 5px',
-    borderRadius: '5px',
-    cursor: 'pointer',
-    marginBottom: '80px',
-  },
-  logout: {
-    backgroundColor: 'red',
-    padding: '10px 20px',
-    borderRadius: '5px',
-    cursor: 'pointer',
-    marginBottom: '10px',
-  },
-  inputContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'white',
-    padding: '20px',
-    borderRadius: '5px',
-    marginLeft: '20px',
-    marginRight: '20px',
-  },
-  inputLabel: {
-    marginBottom: '10px',
-    fontWeight: 'bold',
-  },
-  input: {
-    padding: '5px 10px',
-    borderRadius: '5px',
-    border: '1px solid #ccc',
-    width: '100%',
-    boxSizing: 'border-box',
-  },
-};
-
-const HomePage = () => {
+  const getBookIdHandler = (id) => {
+    console.log("The ID of document to be edited: ", id);
+    setBookId(id);
+  };
   return (
-    <div style={styles.container}>
-      <div style={styles.buttonContainer}>
-        <button style={styles.button}>Home</button>
-        <button style={styles.button}>Campaigns</button>
-        <button style={styles.button}>Collaborations</button>
-        <button style={styles.button}>Donation Applications</button>
-        <button style={styles.button}>Donation History</button>
-        <button style={styles.button}>Map View</button>
-        <button style={styles.button}>Volunteer Position</button>
-        <button style={styles.button1}>Settings</button>
-        <button style={styles.logout}>Log Out</button>
-      </div>
-      <div style={styles.inputContainer}>
-        <label style={styles.inputLabel}>Enter Text 1:</label>
-        <input type="text" style={styles.input} />
-      </div>
-      <div style={styles.inputContainer}>
-        <label style={styles.inputLabel}>Enter Text 2:</label>
-        <input type="text" style={styles.input} />
-      </div>
-      <div style={styles.inputContainer}>
-        <label style={styles.inputLabel}>Enter Text 3:</label>
-        <input type="text" style={styles.input} />
-      </div>
-    </div>
-  );
-};
+    <>
+    <div className="flex">
+      <div className="bg-[#F2F2F2] h-screen w-1/4 flex flex-col justify-between items-center">
+        {/* Logo's div */}
+        <div className="image bg-opacity-100 h-1/6 flex justify-center">
+          <img className="" src="./components/Logo_Final.png" alt="haha" />
+        </div>
 
-export default HomePage;
+        {/* Menu options' div */}
+        <div className="menu-items flex flex-col justify-between py-8 h-full w-full">
+          <button className="flex items-center mt-1 pl-10 py-2 mr-8  bg-[#CBC7C7] rounded-e-3xl">
+            <img className="h-5" src="./components/home.png" alt="LMAO" />
+            <a href='/' className="px-4">Home</a>
+          </button>
+          <button className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-e-3xl">
+            <img className="h-5" src="./components/donation.png" alt="LMAO" />
+            <a href="/" className="px-4">Campaigns</a>
+          </button>
+          <button className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-e-3xl">
+            <img className="h-5" src="./components/deal.png" alt="LMAO" />
+            <a href="/" className="px-4">Collaboration</a>
+          </button>
+          <button className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-e-3xl">
+            <img className="h-5" src="./components/google-docs.png" alt="LMAO" />
+            <a href="/" className="px-4">Donation Applications</a>
+
+          </button>
+          <button className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-e-3xl">
+            <img className="h-5" src="./components/history.png" alt="LMAO" />
+            <a href="/" className="px-4">Donation History</a>
+          </button>
+          <button className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-e-3xl">
+            <img className="h-5" src="./components/map.png" alt="LMAO" />
+            <a href="/" className="px-4">Map View</a>
+          </button>
+          <button className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-e-3xl">
+            <img className="h-5" src="./components/volunteer.png" alt="LMAO" />
+            <a href="/" className="px-4">Volunteer Position</a>
+          </button>
+          <button className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-e-3xl">
+            <img className="h-5" src="./components/settings.png" alt="LMAO" />
+            <a href="/" className="px-4">Setting</a>
+          </button>
+        </div>
+        {/* Log-out div */}
+        <div className="log-out-btn flex w-2/5 py-2 my-8 bg-red-400 hover:bg-red-500 rounded-md justify-center items-center">
+          <img className="h-5" src="./components/logout.png" alt="LMAO" />
+          <button className="btn px-2">Log out</button>
+        </div>
+      </div>
+      {/* <Navbar bg="dark" variant="dark" className="header">
+  <Container>
+    <Navbar.Brand href="#home">Taawun</Navbar.Brand>
+  </Container>
+</Navbar> */}
+
+      {/* <div style={{ backgroundColor: '#D5C6FF', minHeight: '100vh', minWidth: '100vw' }}> */}
+      <div className="w-3/4 border-2 border-black">
+        <Container style={{ width: "500px" }}>
+          <Row>
+            <Col>
+              <AddBook id={bookId} setBookId={setBookId} />
+            </Col>
+          </Row>
+        </Container>
+        <Container>
+          <Row>
+            <Col>
+              <BooksList getBookId={getBookIdHandler} />
+            </Col>
+          </Row>
+        </Container>
+      </div>
+      {/* </div> */}
+
+      </div>
+
+    </>
+  );
+}
+
+export default App;

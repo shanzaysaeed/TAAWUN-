@@ -13,6 +13,10 @@ import DonorLanding from './components/donor/DonorLanding';
 import DonorSignup from './components/donor/DonorSignup';
 import DonorSignin from './components/donor/DonorSignin';
 import DonorDashboard from './components/donor/DonorDashboard';
+import RiderLanding from './components/rider/RiderLanding';
+import RiderSignup from './components/rider/RiderSignup';
+import RiderSignin from './components/rider/RiderSignin';
+import RiderDashboard from './components/rider/RiderDashboard';
 import Test from './components/test';
 
 function App() {
@@ -26,11 +30,15 @@ function App() {
           <Route path='/ngo' element={<NgoLanding />} />
           <Route path='/ngo_signin' element={<NgoSignin />} />
           <Route path='/ngo_signup' element={<NgoSignup />} />
-          <Route path='/account' element={<RoleProtectedRoute role='NGO'><NgoDashboard /></RoleProtectedRoute>}/>
+          <Route path='/ngo_home' element={<RoleProtectedRoute role='NGO'><NgoDashboard /></RoleProtectedRoute>}/>
           <Route path='/donor' element={<DonorLanding />} />
           <Route path='/donor_signin' element={<DonorSignin />} />
           <Route path='/donor_signup' element={<DonorSignup />} />
           <Route path='/donor_home' element={<RoleProtectedRoute role='Donor'><DonorDashboard /></RoleProtectedRoute>}/>
+          <Route path='/rider' element={<RiderLanding />} />
+          <Route path='/rider_signin' element={<RiderSignin />} />
+          <Route path='/rider_signup' element={<RiderSignup />} />
+          <Route path='/rider_home' element={<RoleProtectedRoute role='Rider'><RiderDashboard /></RoleProtectedRoute>}/>
           <Route path='/test' element={<Test />} />
         </Routes>
       </AuthContextProvider>

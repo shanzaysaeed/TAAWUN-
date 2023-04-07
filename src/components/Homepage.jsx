@@ -23,7 +23,7 @@ function Homepage() {
         <button className="mb-2 w-full px-12 py-2 rounded-md bg-green-500 text-black font-bold shadow-lg" type="button" onClick={() => {navigate('/admin_signin');}}>Admin</button>
         <button className="mb-2 w-full px-12 py-2 rounded-md bg-green-500 text-black font-bold shadow-lg" type="button" onClick={() => {navigate('/ngo');}}>NGO</button>
         <button className="mb-2 w-full px-12 py-2 rounded-md bg-green-500 text-black font-bold shadow-lg" type="button" onClick={() => {navigate('/donor');}}>Donor</button>
-        <button className="w-full px-12 py-2 rounded-md bg-green-500 text-black font-bold shadow-lg" type="button" onClick={() => {navigate('/ngo');}}>Rider</button>
+        <button className="w-full px-12 py-2 rounded-md bg-green-500 text-black font-bold shadow-lg" type="button" onClick={() => {navigate('/rider');}}>Rider</button>
       </div>
 
       <div className='bar absolute bottom-14 left-60 z-10 w-4/6 h-2/5 bg-white bg-opacity-50 rounded-xl border border-black flex justify-center items-center'>

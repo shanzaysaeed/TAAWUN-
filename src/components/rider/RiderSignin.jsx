@@ -5,7 +5,7 @@ import { db } from '../../firebase';
 import { collection, query, where, getDocs } from "firebase/firestore";
 import PartenerSideBar from '../../views/PartenerSideBar';
 
-const NgoSignin = () => {
+const RiderSignin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -18,7 +18,7 @@ const NgoSignin = () => {
     setLoading(true);
     try {
       const ngoRef = collection(db, "users");
-      let q = query(ngoRef, where("email", "==", email), where("role", "==", "NGO"));
+      let q = query(ngoRef, where("email", "==", email), where("role", "==", "Rider"));
       let querySnapshot = await getDocs(q);
       if (querySnapshot.empty) {
         throw new Error("Firebase: Error (auth/user-not-found).");
@@ -30,7 +30,7 @@ const NgoSignin = () => {
       }
       await signIn(email, password);
       setLoading(false);
-      navigate('/ngo_home');
+      navigate('/rider_home');
     } catch (e) {
       setLoading(false);
       setError(e.message);
@@ -74,4 +74,4 @@ return (
 );
 };
 
-export default NgoSignin;
+export default RiderSignin;

@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { collection, query, where, getDocs, updateDoc, doc } from "firebase/firestore";
-import { UserAuth } from '../contexts/AuthContext';
-import { db } from '../firebase';
+import { UserAuth } from '../../contexts/AuthContext';
+import { db } from '../../firebase';
 
 const Admin = () => {
+  const { createUser, logout } = UserAuth();
+  const navigate = useNavigate();
   const [NGOS, setNGOS] = useState([]);
-  const { createUser } = UserAuth();
   const [error, setError] = useState('')
   
 
@@ -24,6 +26,15 @@ const Admin = () => {
   }, []);
 
 
+  const handleLogout = async () => {
+    try {
+      await logout();
+      navigate('/admin_signin');
+      console.log('You are logged out')
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
 
 
   const handleSubmit = async (e, email, password) => {
@@ -87,6 +98,9 @@ const Admin = () => {
           ))}
         </tbody>
       </table>
+      <button onClick={handleLogout} className='border px-6 py-2 my-4'>
+        Logout
+      </button>
     </div>
   );
 };

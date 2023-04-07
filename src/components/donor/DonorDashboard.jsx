@@ -1,15 +1,15 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { UserAuth } from '../contexts/AuthContext';
+import { UserAuth } from '../../contexts/AuthContext';
 
-const Account = () => {
+const DonorDashboard = () => {
   const { user, logout } = UserAuth();
   const navigate = useNavigate();
 
   const handleLogout = async () => {
     try {
       await logout();
-      navigate('/ngo');
+      navigate('/donor');
       console.log('You are logged out')
     } catch (e) {
       console.log(e.message);
@@ -28,4 +28,4 @@ const Account = () => {
   );
 };
 
-export default Account;
+export default DonorDashboard;

@@ -22,8 +22,7 @@ function NgoSignup() {
     const [addressError, setAddressError] = useState('');
     const [registrationError, setRegistrationError] = useState('');
     const [contactError, setContactError] = useState('');
-  
-  
+    const [requiredError, setRequiredError] = useState("")
   
     const navigate = useNavigate()
   
@@ -33,6 +32,16 @@ function NgoSignup() {
       
       // Validate input fields
       let isValid = true;
+
+
+      if(!name || !address || !registration || !contact){
+        setRequiredError("* Required")
+        isValid = false
+      }
+      else {
+        setRequiredError("")
+      }
+
       if (!name) {
         setNameError('NGO name is required');
         isValid = false;
@@ -69,24 +78,24 @@ function NgoSignup() {
       } else {
         setContactError('');
       }
-    
-      if (!logo) {
-        setError('Please select a logo.');
-        isValid = false;
-      } else {
-        setError('');
-      }
-    
+  
       if (isValid) {
         try {
           setLoading(true)
     
           // add user information to Firestore
           const userRef = collection(db, "users");
-          const ngoDocRef = doc(userRef, name); // create a doc reference named after the NGO
-          const storageRef = ref(storage, `logos/${name}_${logo.name}`);
-          await uploadBytes(storageRef, logo); // upload logo file to Firebase Storage
-          const logoURL = await getDownloadURL(storageRef); // get the URL of the uploaded logo
+          const ngoDocRef = doc(userRef, email); // create a doc reference named after the NGO
+          let logoURL = ""
+        
+          if (!logo) {
+            logoURL = "https://firebasestorage.googleapis.com/v0/b/taawun-cs360.appspot.com/o/ngo_logos%2Fgp.png?alt=media&token=4b1691c5-10d1-434a-816d-ac0fd4a1de75"
+          
+          } else {
+            const storageRef = ref(storage, `ngo_logos/${email}_${logo.name}`);
+            await uploadBytes(storageRef, logo); // upload profile picture file to Firebase Storage
+            logoURL = await getDownloadURL(storageRef); // get the URL of the uploaded profile picture
+          }
           await setDoc(ngoDocRef, {
             name,
             email,
@@ -109,86 +118,83 @@ function NgoSignup() {
       }
     };  
 
-
-
-
-
   return (
-    <div className="flex bg-purple-300 h-screen w-screen">
+    <div className="flex items-center justify-center w-screen h-screen bg-purple-300">
       <PartenerSideBar/>
-      <div className="fixed top-10 right-0 bottom-10 left-60 bg-white rounded-2xl flex">
+      <div className="fixed top-10 right-0 bottom-0 left-60 bg-gray-100 rounded-2xl flex">
         <div className="w-full flex flex-col justify-center items-center">
-            <img src="../components/logo_Final.png" alt="Logo" className="w-40 h-40 mb-2" />
+            <img src="../components/logo_Final.png" alt="Logo" className="w-40 h-40 mt-4" />
             <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center">
-            <div className='my-2 w-full'>
+            <div className='my-1'>
+              {requiredError && <p className="text-red-500 ">{requiredError}</p>}
+            </div>
+            <div >
+              <p className='text-xs font-bold'>Full Name</p>
                 <input
                     onChange={(e) => setName(e.target.value)}
-                    className={`border-2 border-gray-800 rounded-md p-3 ${nameError && 'border-red-500'}`}
+                    className={`border-2 border-gray-300 rounded-md p-1 w-80 items-left  ${nameError && 'border-red-500'}`}
                     type='text'
                     placeholder='Name'
-                    style={{width: '100%'}}
                 />
-                {nameError && <p className="text-red-500">{nameError}</p>}
             </div>
-                <div className='my-2 w-full'>
+                <div className='my-1'>
+                  <p className='text-xs font-bold'>Email Address</p>
                     <input
                     onChange={(e) => setEmail(e.target.value)}
-                    className= {`border-2 border-gray-800 rounded-md p-3 ${emailError && 'border-red-500'}`}
+                    className= {`border-2 border-gray-300 rounded-md p-1 w-80 items-left ${emailError && 'border-red-500'}`}
                     type='email'
                     placeholder='Email'
-                    style={{width: '100%'}}
                     />
                     {emailError && <p className="text-red-500">{emailError}</p>}
                 </div>
-                <div className='my-2 w-full'>
+                <div className='my-1'>
+                  <p className='text-xs font-bold'>Password</p>
                     <input
                         onChange={(e) => setPassword(e.target.value)}
-                        className={`border-2 border-gray-800 rounded-md p-3 ${passwordError && 'border-red-500'}`}
+                        className={`border-2 border-gray-300 rounded-md p-1 w-80 items-left ${passwordError && 'border-red-500'}`}
                         type='password'
                         placeholder='Password'
-                        style={{width: '100%'}}
                     />
                     {passwordError && <p className="text-red-500">{passwordError}</p>}
                 </div>
-                <div className='my-2 w-full'>
+                <div className='my-1'>
+                  <p className='text-xs font-bold'>Address</p>
                     <input
                         onChange={(e) => setAddress(e.target.value)}
-                        className={`border-2 border-gray-800 rounded-md p-3 ${addressError && 'border-red-500'}`}
+                        className={`border-2 border-gray-300 rounded-md p-1 w-80 items-left ${addressError && 'border-red-500'}`}
                         type='text'
                         placeholder='Address'
-                        style={{width: '100%'}}
                     />
-                    {addressError && <p className="text-red-500">{addressError}</p>}
                 </div>
-                <div className='my-2 w-full flex'>
-                    <div className='w-1/2 mr-2'>
+                <div className='my-1 flex'>
+                    <div className='w-40'>
+                      <p className='text-xs font-bold'>Registration N.o</p>
                         <input
                             onChange={(e) => setRegistration(e.target.value)}
-                            className={`border-2 border-gray-800 rounded-md p-3 ${registrationError && 'border-red-500'}`}
+                            className={`border-2 border-gray-300 rounded-md p-1 w-full items-left ${registrationError && 'border-red-500'}`}
                             type='number'
                             placeholder='Registration Number'
                         />
-                        {registrationError && <p className="text-red-500">{registrationError}</p>}
                     </div>
-                    <div className='w-1/2 ml-2'>
+                    <div className='w-40 ml-1'>
+                      <p className='text-xs font-bold'>Contact N.o</p>
                         <input
                             onChange={(e) => setContact(e.target.value)}
-                            className={`border-2 border-gray-800 rounded-md p-3 ${contactError && 'border-red-500'}`}
+                            className={`border-2 border-gray-300 rounded-md p-1 w-full  items-center ${contactError && 'border-red-500'}`}
                             type='number'
                             placeholder='Contact Number'
                         />
-                        {contactError && <p className="text-red-500">{contactError}</p>}
                     </div>
                 </div>
-                <div className='my-2 w-full'>
+                <div className='my-1'>
+                  <p className='text-xs font-bold'>Upload Logo</p>
                     <input
                         onChange={(e) => setLogo(e.target.files[0])}
-                        className='border-2 border-gray-800 rounded-md p-3'
+                        className='border-2 border-gray-300 rounded-md p-1 w-80 file-input items-center'
                         type='file'
-                        style={{width: '100%'}}
                     />
                 </div>
-                <button className='bg-green-500 hover:bg-green-600 text-white rounded-lg py-2 px-8 my-2 w-80' disabled={loading}>
+                <button className='bg-green-500 hover:bg-green-600 text-white rounded-2xl py-2 px-8 my-2 w-80' disabled={loading}>
                     {loading ? 'Loading...' : 'Sign Up'}
                 </button>
             </form>

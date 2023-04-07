@@ -5,7 +5,7 @@ import { db } from '../../firebase';
 import { collection, query, where, getDocs } from "firebase/firestore";
 import PartenerSideBar from '../../views/PartenerSideBar';
 
-const NgoSignin = () => {
+const AdminSignin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -18,19 +18,15 @@ const NgoSignin = () => {
     setLoading(true);
     try {
       const ngoRef = collection(db, "users");
-      let q = query(ngoRef, where("email", "==", email), where("role", "==", "NGO"));
+      let q = query(ngoRef, where("email", "==", email), where("role", "==", "admin"));
       let querySnapshot = await getDocs(q);
       if (querySnapshot.empty) {
         throw new Error("Firebase: Error (auth/user-not-found).");
       }
-      q = query(ngoRef, where("email", "==", email), where("verification", "==", "True"));
-      querySnapshot = await getDocs(q);
-      if (querySnapshot.empty) {
-        throw new Error("Your profile has not been verified yet.");
-      }
       await signIn(email, password);
       setLoading(false);
-      navigate('/account');
+      navigate('/admin');
+
     } catch (e) {
       setLoading(false);
       setError(e.message);
@@ -74,4 +70,4 @@ return (
 );
 };
 
-export default NgoSignin;
+export default AdminSignin;

@@ -103,28 +103,28 @@ function App() {
 
                     <div className='flex flex-row w-3/4 h-40 mt-3 ml-32 justify-center'>
                         <div className='flex flex-col border border-black shadow-md w-40 bg-white rounded-2xl h-40 justify-center mr-28'>
-                            <div className='flex flex-col  mx-4  mb-8 justify-center items-center'>
+                            <button className='flex flex-col  mx-4  mb-8 justify-center items-center'>
                                 <img src={akh} className=' w-12 h-12 mt-8'></img>
                                 <p className='font-bold text-lg '>Akhuwat</p>
                                 <p className='text-sm text-black whitespace-nowrap mb-2'>Flood Relief in Sindh </p>
                                 <button className='bg-[#26235C] text-white rounded-md  w-full h-8 '>Collaborate!</button>
-                            </div>
+                            </button>
                         </div>
                         <div className='flex flex-col border border-black w-40 bg-white rounded-2xl h-40 justify-center mr-28'>
-                            <div className='flex flex-col  mx-4  mb-8 justify-center items-center'>
+                            <button className='flex flex-col  mx-4  mb-8 justify-center items-center'>
                                 <img src={jdc} className=' w-12 h-12 mt-8'></img>
                                 <p className='font-bold text-lg '>JDC Pakistan</p>
                                 <p className='text-sm text-black whitespace-nowrap mb-2'>Fire Relief </p>
                                 <button className='bg-[#26235C] text-white rounded-md  w-full h-8 '>Collaborate!</button>
-                            </div>
+                            </button>
                         </div>
                         <div className='flex flex-col border border-black w-40 bg-white rounded-2xl h-40 justify-center'>
-                            <div className='flex flex-col  mx-4  mb-8 justify-center items-center'>
+                            <button className='flex flex-col  mx-4  mb-8 justify-center items-center'>
                                 <img src={edhi} className=' w-14 h-14 mt-6'></img>
                                 <p className='font-bold text-lg '>Edhi</p>
                                 <p className='text-sm text-black whitespace-nowrap mb-2'>Education in Sindh </p>
                                 <button className='bg-[#26235C] text-white rounded-md  w-full h-8 '>Collaborate!</button>
-                            </div>
+                            </button>
                         </div>
                     </div>
                     
@@ -140,28 +140,28 @@ function App() {
 
                     <div className='flex flex-row ml-32 w-3/4 h-40 justify-center mb-6'>
                         <div className='flex flex-col border border-black shadow-md w-40 bg-white rounded-2xl h-40 justify-center mr-28'>
-                            <div className='flex flex-col  mx-4  mb-8 justify-center items-center'>
+                            <button className='flex flex-col  mx-4  mb-8 justify-center items-center'>
                                 <img src={chiipa} className=' w-12 h-12 mt-8'></img>
                                 <p className='font-bold text-lg'>Chiipa</p>
                                 <p className='text-sm text-black whitespace-nowrap mb-2'>Food Drive </p>
                                 <button className='bg-[#26235C] text-white rounded-md  w-full h-8'>Collaborate!</button>
-                            </div>
+                            </button>
                         </div>
                         <div className='flex flex-col border border-black w-40 bg-white rounded-2xl h-40 justify-center mr-28'>
-                            <div className='flex flex-col  mx-4  mb-8 justify-center items-center'>
+                            <button className='flex flex-col  mx-4  mb-8 justify-center items-center'>
                                 <img src={jdc} className=' w-12 h-12 mt-8'></img>
                                 <p className='font-bold text-lg'>JDC Pakistan</p>
                                 <p className='text-sm text-black whitespace-nowrap mb-2'>Flood Relief </p>
                                 <button className='bg-[#26235C] text-white rounded-md  w-full h-8'>Collaborate!</button>
-                            </div>
+                            </button>
                         </div>
                         <div className='flex flex-col border border-black w-40 bg-white rounded-2xl h-40 justify-center'>
-                            <div className='flex flex-col  mx-4  mb-8 justify-center items-center'>
+                            <button className='flex flex-col  mx-4  mb-8 justify-center items-center'>
                                 <img src={khid} className=' w-12 h-12 mt-8'></img>
                                 <p className='font-bold text-lg '>Al-khidmat</p>
                                 <p className='text-sm text-black whitespace-nowrap mb-2'>Old-age homes</p>
                                 <button className='bg-[#26235C] text-white rounded-md  w-full h-8'>Collaborate!</button>
-                            </div>
+                            </button>
 
                         </div>
 

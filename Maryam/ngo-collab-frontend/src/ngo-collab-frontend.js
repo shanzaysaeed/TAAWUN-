@@ -12,14 +12,14 @@ import khid from './alkhidmat.jpeg';
 import chiipa from './chiipa.jpeg';
 import edhi from './edhi.jpeg';
 import jdc from './Jdc-Logo.png';
-import saylani from './saylani.jpeg';
 import map_view from './map_view.jpeg';
-import search from './search.jpeg';
+import prev from './prev.png';
+import next from './next.png';
 
 function App() {
-  return (
+    return (
 
-    <div className='flex bg-purple-300 w-screen h-screen'>
+        <div className='flex bg-purple-300 w-screen h-screen'>
             <div className="bg-slate-100 h-screen w-80 flex flex-col justify-between items-center">
                 <div className="image bg-opacity-100 h-1/6 flex justify-center">
                     <img src={logo} />
@@ -90,10 +90,10 @@ function App() {
                     </div>
 
                     <div className='p-3 mr-20 flex items-start justify-center items-center '>
-                        <button className='bg-[#26235C] w-40 h-10 text-white text-lg font-semibold rounded-lg border border-black flex justify-center items-center '>
-                          Collaborate
-                          <span className='text-4xl mb-2 ml-3'>+</span>
-                        
+                        <button className='bg-[#26235C] w-40 h-10 text-white text-lg font-semibold rounded-lg border border-black flex justify-center items-center hover:bg-gray-500 '>
+                            Collaborate
+                            <span className='text-4xl mb-2 ml-3'>+</span>
+
                         </button>
                     </div>
 
@@ -101,7 +101,7 @@ function App() {
 
                 <div className=" my-6 mx-10 w-11/12 h-2/3 rounded">
 
-                    <div className='flex flex-row  w-full h-40 mt-3 justify-center'>
+                    <div className='flex flex-row w-3/4 h-40 mt-3 ml-32 justify-center'>
                         <div className='flex flex-col border border-black shadow-md w-40 bg-white rounded-2xl h-40 justify-center mr-28'>
                             <div className='flex flex-col  mx-4  mb-8 justify-center items-center'>
                                 <img src={akh} className=' w-12 h-12 mt-8'></img>
@@ -126,11 +126,19 @@ function App() {
                                 <button className='bg-[#26235C] text-white rounded-md  w-full h-8 '>Collaborate!</button>
                             </div>
                         </div>
-
-
+                    </div>
+                    
+                    <div className='flex flex-row justify-between'>
+                    <div className=' w-10 h-10 ml-6'>
+                        <button><img src={prev}></img></button>
+                    </div>
+                    <div className=' w-10 h-10 mr-6'>
+                        <button><img src={next}></img></button>
+                    </div>
                     </div>
 
-                    <div className='flex flex-row  w-full h-40 justify-center mt-10'>
+
+                    <div className='flex flex-row ml-32 w-3/4 h-40 justify-center mb-6'>
                         <div className='flex flex-col border border-black shadow-md w-40 bg-white rounded-2xl h-40 justify-center mr-28'>
                             <div className='flex flex-col  mx-4  mb-8 justify-center items-center'>
                                 <img src={chiipa} className=' w-12 h-12 mt-8'></img>
@@ -162,6 +170,7 @@ function App() {
 
                 </div>
 
+
             </div>
         </div>
 
@@ -169,8 +178,8 @@ function App() {
 
 
 
-    
-  );
+
+    );
 }
 
 export default App;

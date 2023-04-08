@@ -18,12 +18,12 @@ const Donate3 = () => {
                           <p>Greater Good</p>
                       </div>
                       <div className='my-8'>
-                          <button className='w-40 bg-purple-400 rounded-lg text-white border border-black '>
-                              Cash
-                          </button>
-                          <button className='w-40 bg-white rounded-lg text-[#AA8CFF] border border-black ml-4 '>
-                              Non-Cash
-                          </button>
+                            <button onClick={() => {navigate("/donate1")}} className='w-40 bg-purple-400 rounded-lg text-white border border-black hover:bg-purple-500'>
+                                Cash
+                            </button>
+                            <button onClick={() => {navigate("/donate5")}} className='w-40 bg-white rounded-lg text-[#AA8CFF] border border-black ml-4 hover:bg-gray-500'>
+                                Non-Cash
+                            </button>
                       </div>
                   </div>
 

@@ -25,7 +25,7 @@ function DonorSideBar() {
             </div>
 
             <div className="menu-items flex flex-col justify-between py-8 h-full w-full">
-            <button onClick={() => {navigate("/donor_home")}} className="flex items-center mt-1 pl-10 py-2 mr-8  bg-[#CBC7C7] rounded-r-3xl">
+            <button onClick={() => {navigate("/donor_home")}} className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-r-3xl">
                 <img className="h-5" src="../components/home.png" alt="Home" />
                 <p className="px-4"> Home </p>
             </button>

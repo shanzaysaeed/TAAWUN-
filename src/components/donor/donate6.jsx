@@ -1,7 +1,7 @@
 import DonorSideBar from '../../views/DonorSideBar';
 import { useNavigate } from 'react-router-dom';
 
-const Donate4 = () => {
+const Donate5 = () => {
   const navigate = useNavigate();
   return (
     <div className='flex bg-purple-300 w-screen h-screen'>
@@ -14,11 +14,11 @@ const Donate4 = () => {
               <p>Greater Good</p>
             </div>
             <div className='my-8'>
-              <button onClick={() => {navigate("/donate1")}} className='w-40 bg-purple-400 rounded-lg text-white border border-black hover:bg-purple-500'>
-                  Cash
+              <button onClick={() => {navigate("/donate1")}} className='w-40 bg-white rounded-lg text-[#AA8CFF] border border-black hover:bg-gray-500'>
+                Cash
               </button>
-              <button onClick={() => {navigate("/donate5")}} className='w-40 bg-white rounded-lg text-[#AA8CFF] border border-black ml-4 hover:bg-gray-500'>
-                  Non-Cash
+              <button onClick={() => {navigate("/donate5")}} className='w-40 bg-purple-400 rounded-lg text-white border border-black ml-4 hover:bg-purple-500'>
+                Non-Cash
               </button>
             </div>
           </div>
@@ -33,11 +33,7 @@ const Donate4 = () => {
           <div className='flex flex-row justify-center'>
             <button className='w-6 h-6 bg-white  rounded-full mt-2 border border-black '></button>
             <a href='/' className='mt-2'>------------</a>
-            <button className='w-6 h-6 bg-white  rounded-full mt-2 border border-black '></button>
-            <a href='/' className='mt-2'>------------</a>
-            <button className='w-6 h-6 bg-white rounded-full mt-2 border border-black'></button>
-            <a href='/' className='mt-2'>------------</a>
-            <button className='w-6 h-6  bg-purple-400 rounded-full mt-2 border border-black'></button>
+            <button className='w-6 h-6 bg-purple-400  rounded-full mt-2 border border-black '></button>
           </div>
 
           <div className='flex flex-row  w-full h-full justify-center items-center text-center'>
@@ -45,9 +41,9 @@ const Donate4 = () => {
               <div className='flex flex-col  mx-4  mb-8 justify-center items-center'>
                 <img src="../components/tick.jpeg" alt="tick" className=' w-10 h-10 mt-4 '></img>
                 <p className='font-bold text-2xl '>THANK YOU</p>
-                <p className='font-bold text-lg mt-4 '>Your Donation has been received by the respective NGO</p>
+                <p className='font-bold text-lg mt-4 '>The rider will soon be there to collect your donation</p>
 
-                <button onClick={() => {navigate("/donate1")}} className='bg-[#26235C] text-white rounded-md  w-40 h-8 mt-2 hover:bg-purple-500'>Done</button>
+                <button onClick={() => {navigate("/donate5")}} className='bg-[#26235C] text-white rounded-md  w-40 h-8 mt-4 hover:bg-purple-600'>Done</button>
               </div>
             </div>
           </div>  
@@ -63,12 +59,4 @@ const Donate4 = () => {
   );
 }
 
-
-
-
-
-
-
-
-
-export default Donate4;
+export default Donate5;

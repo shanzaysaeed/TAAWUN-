@@ -75,6 +75,10 @@ function App() {
                     </div>
 
                     <div className='p-5 mr-20 flex items-start  '>
+                    <div className='flex flex-row w-full h-10 justify-center'>
+                        <input className='p-3 rounded-2xl bg-white border border-black w-3/4 h-8 mt-5' type='text' placeholder='Search'></input>
+                        <button className='absolute mt-5 ml-28 '><img src={search} className='w-6 h-6 rounded mt-1'></img></button>
+                    </div>
                         <p className='text-black font-semibold underline text-lg mt-6 '>Profile</p>
                         <img src={dp} className='rounded-1/2 w-10 flex-shrink-0 ml-4 mt-4'></img>
                     </div>
@@ -90,11 +94,6 @@ function App() {
                         <button className='w-6 h-6 bg-white rounded-full mt-2 border border-black'></button>
                         <a href='/' className='mt-2'>------------</a>
                         <button className='w-6 h-6 bg-white rounded-full mt-2 border border-black'></button>
-                    </div>
-
-                    <div className='flex flex-row w-full h-10 justify-center'>
-                        <input className='p-3 rounded-2xl bg-white border border-black w-1/6 h-8 mt-4' type='text' placeholder='Search'></input>
-                        <button className='absolute mt-5 ml-28 '><img src={search} className='w-6 h-6 rounded'></img></button>
                     </div>
 
                     <div>

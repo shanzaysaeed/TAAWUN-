@@ -12,9 +12,10 @@ import khid from './alkhidmat.jpeg';
 import chiipa from './chiipa.jpeg';
 import edhi from './edhi.jpeg';
 import jdc from './Jdc-Logo.png';
-import saylani from './saylani.jpeg';
 import map_view from './map_view.jpeg';
 import search from './search.jpeg';
+import prev from './prev.png';
+import next from './next.png';
 
 function App() {
     return (
@@ -77,13 +78,17 @@ function App() {
                     </div>
 
                     <div className='p-5 mr-20 flex items-start  '>
+                    <div className='flex flex-row w-full h-10 justify-center'>
+                        <input className='p-3 rounded-2xl bg-white border border-black w-3/4 h-8 mt-5' type='text' placeholder='Search'></input>
+                        <button className='absolute mt-5 ml-28 '><img src={search} className='w-6 h-6 rounded mt-1'></img></button>
+                    </div>
                         <p className='text-black font-semibold underline text-lg mt-6 '>Profile</p>
                         <img src={dp} className='rounded-1/2 w-10 flex-shrink-0 ml-4 mt-4'></img>
                     </div>
 
                 </div>
 
-                <div className="bg-[#F2F2F2] my-6 mx-10 w-11/12 h-2/3 rounded">
+                <div className="bg-[#F2F2F2] my-6 mx-8 w-11/12 h-3/4 rounded">
                     <div className='flex flex-row justify-center'>
                         <button className='w-6 h-6 bg-purple-400 rounded-full mt-2 border border-black '></button>
                         <a href='/' className='mt-2'>------------</a>
@@ -92,11 +97,6 @@ function App() {
                         <button className='w-6 h-6 bg-white rounded-full mt-2 border border-black'></button>
                         <a href='/' className='mt-2'>------------</a>
                         <button className='w-6 h-6 bg-white rounded-full mt-2 border border-black'></button>
-                    </div>
-
-                    <div className='flex flex-row w-full h-10 justify-center'>
-                        <input className='p-3 rounded-2xl bg-white border border-black w-1/6 h-8 mt-4' type='text' placeholder='Search'></input>
-                        <button className='absolute mt-5 ml-28 '><img src={search} className='w-6 h-6 rounded'></img></button>
                     </div>
 
                     <div className='flex flex-row  w-full h-40 mt-3 justify-center'>
@@ -123,6 +123,15 @@ function App() {
                         </div>
 
 
+                    </div>
+
+                    <div className='flex flex-row justify-between'>
+                    <div className=' w-10 h-10 ml-6'>
+                        <button><img src={prev}></img></button>
+                    </div>
+                    <div className=' w-10 h-10 mr-6'>
+                        <button><img src={next}></img></button>
+                    </div>
                     </div>
 
                     <div className='flex flex-row  w-full h-40 justify-center mt-2'>
@@ -159,13 +168,6 @@ function App() {
 
     );
 }
-
-
-
-
-
-
-
 
 
 export default App;

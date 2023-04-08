@@ -8,8 +8,8 @@ import dp from './dp.png';
 import settings from './settings.jpeg';
 import logout from './logout.png';
 import map_view from './map_view.jpeg';
-import tick from './tick.jpeg';
-
+import back from './back.png';
+import search from './search.jpeg';
 
 function App() {
   return (
@@ -62,16 +62,20 @@ function App() {
               <p>Greater Good</p>
             </div>
             <div className='my-8'>
-              <button className='w-40 bg-purple-400 rounded-lg text-white border border-black '>
+              <button className='w-40 bg-white rounded-lg text-[#AA8CFF] border border-black '>
                 Cash
               </button>
-              <button className='w-40 bg-white rounded-lg text-[#AA8CFF] border border-black ml-4 '>
+              <button className='w-40 bg-purple-400 rounded-lg text-white border border-black ml-4 '>
                 Non-Cash
               </button>
             </div>
           </div>
 
           <div className='p-5 mr-20 flex items-start  '>
+            <div className='flex flex-row w-full h-10 justify-center'>
+              <input className='p-3 rounded-2xl bg-white border border-black w-3/4 h-8 mt-5' type='text' placeholder='Search'></input>
+              <button className='absolute mt-5 ml-28 '><img src={search} className='w-6 h-6 rounded mt-1'></img></button>
+            </div>
             <p className='text-black font-semibold underline text-lg mt-6 '>Profile</p>
             <img src={dp} className='rounded-1/2 w-10 flex-shrink-0 ml-4 mt-4'></img>
           </div>
@@ -80,28 +84,30 @@ function App() {
 
         <div className="bg-[#F2F2F2] my-6 mx-10 w-11/12 h-3/4 rounded justify-center">
           <div className='flex flex-row justify-center'>
-            <button className='w-6 h-6 bg-white  rounded-full mt-2 border border-black '></button>
+            <button className='w-6 h-6 bg-purple-400  rounded-full mt-2 border border-black '></button>
             <a href='/' className='mt-2'>------------</a>
             <button className='w-6 h-6 bg-white  rounded-full mt-2 border border-black '></button>
-            <a href='/' className='mt-2'>------------</a>
-            <button className='w-6 h-6 bg-white rounded-full mt-2 border border-black'></button>
-            <a href='/' className='mt-2'>------------</a>
-            <button className='w-6 h-6  bg-purple-400 rounded-full mt-2 border border-black'></button>
           </div>
 
-          <div className='flex flex-row  w-full h-full justify-center items-center text-center'>
-                        <div className='flex flex-col border border-black shadow-md w-1/4 bg-white rounded-2xl h-60 justify-center items-center'>
-                            <div className='flex flex-col  mx-4  mb-8 justify-center items-center'>
-                                <img src={tick} className=' w-10 h-10 mt-4 '></img>
-                                <p className='font-bold text-2xl '>THANK YOU</p>
-                                <p className='font-bold text-lg mt-4 '>Your Donation has been received by the respective NGO</p>
+          <div className='flex flex-col justify-center items-center'>
+            <p className='text-black text-xl font-semibold ml-6 mt-4'>Enter your phone number:</p>
+            <input className='bg-gray-300 rounded-md p-1 w-80 mt-2' type='number' placeholder='Contact number'></input>
+            <p className='text-black text-xl font-semibold ml-6 mt-2'>Details of things you are donating:</p>
+            <input className='bg-gray-300 rounded-md p-1 w-80 mt-2' type='text' placeholder='Description'></input>
+            <p className='text-black text-xl font-semibold ml-6 mt-2'>Pick-up Address:</p>
+            <input className='bg-gray-300 rounded-md p-1 w-80 mt-2' type='text' placeholder='Address'></input>
 
-                                <button className='bg-[#26235C] text-white rounded-md  w-40 h-8 mt-2'>Done</button>
-                            </div>
-                        </div>
-            </div>  
+          </div>
 
-        
+          <div className='flex justify-center'>
+            <div className="flex flex-row w-1/8 mt-6 py-2 bg-[#CCCCCC] hover:bg-gray-500 rounded-3xl justify-center items-center mr-4">
+              <img className="h-5" src={back} />
+              <button className="btn px-2">Go back</button>
+            </div>
+            <div className="flex flex-row w-1/8 mt-6 py-2 bg-green-500 hover:bg-green-600 rounded-3xl justify-center items-center">
+              <button className='px-6'>Donate</button>
+            </div>
+          </div>
 
 
         </div>

@@ -18,10 +18,10 @@ const Donate1 = () => {
                             <p>Greater Good</p>
                         </div>
                         <div className='my-8'>
-                            <button className='w-40 bg-purple-400 rounded-lg text-white border border-black '>
+                            <button onClick={() => {navigate("/donate1")}} className='w-40 bg-purple-400 rounded-lg text-white border border-black hover:bg-purple-500'>
                                 Cash
                             </button>
-                            <button className='w-40 bg-white rounded-lg text-[#AA8CFF] border border-black ml-4 '>
+                            <button onClick={() => {navigate("/donate5")}} className='w-40 bg-white rounded-lg text-[#AA8CFF] border border-black ml-4 hover:bg-gray-500'>
                                 Non-Cash
                             </button>
                         </div>
@@ -54,27 +54,30 @@ const Donate1 = () => {
 
                     <div className='flex flex-row  w-full h-40 mt-3 justify-center'>
                         <div className='flex flex-col border border-black shadow-md w-40 bg-white rounded-2xl h-40 justify-center mr-20'>
-                            <div className='flex flex-col  mx-4  mb-8 justify-center items-center'>
+                            <button className='flex flex-col  mx-4  mb-4 justify-center items-center'>
                                 <img src="../components/akhuwat.png" alt="logo" className=' w-12 h-12 '></img>
-                                <p className='font-bold text-lg mb-2'>Akhuwat</p>
-                                <button onClick={() => {navigate("/donate2")}} className='bg-[#26235C] text-white rounded-md  w-full h-8'>Donate Now!</button>
-                            </div>
+                                <p className='font-bold text-lg'>Akhuwat</p>
+                                <p className='font-semibold text-sm'>Earthquake Relief</p>
+                                <button onClick={() => {navigate("/donate2")}} className='bg-[#26235C] text-white rounded-md  w-32  mt-2 w-full h-8 hover:bg-purple-500'>Donate Now!</button>
+                            </button>
                         </div>
 
                         <div className='flex flex-col border border-black w-40 bg-white rounded-2xl h-40 justify-center mr-20'>
-                            <div className='flex flex-col  mx-4  mb-8 justify-center items-center'>
+                            <button className='flex flex-col  mx-4  mb-4 justify-center items-center'>
                                 <img src="../components/jdc.png" alt="logo" className=' w-12 h-12 '></img>
-                                <p className='font-bold text-lg mb-2'>JDC</p>
-                                <button onClick={() => {navigate("/donate2")}} className='bg-[#26235C] text-white rounded-md  w-full h-8'>Donate Now!</button>
-                            </div>
+                                <p className='font-bold text-lg'>JDC</p>
+                                <p className='font-semibold text-sm'>Fire Relief</p>
+                                <button onClick={() => {navigate("/donate2")}} className='bg-[#26235C] text-white rounded-md w-32 mt-2  w-full h-8 hover:bg-purple-500'>Donate Now!</button>
+                            </button>
                         </div>
                         
                         <div className='flex flex-col border border-black w-40 bg-white rounded-2xl h-40 justify-center'>
-                            <div className='flex flex-col  mx-4  mb-8 justify-center items-center'>
-                                <img src="../components/edhhi.png" alt="logo" className=' w-14 h-14 '></img>
-                                <p className='font-bold text-lg mb-2'>Edhi</p>
-                                <button onClick={() => {navigate("/donate2")}} className='bg-[#26235C] text-white rounded-md  w-full h-8'>Donate Now!</button>
-                            </div>
+                            <button className='flex flex-col  mx-4  mb-4 justify-center items-center'>
+                                <img src="../components/edhhi.png" alt="logo" className=' w-12 h-12 '></img>
+                                <p className='font-bold text-lg'>Edhi</p>
+                                <p className='font-semibold text-sm'>Flood Relief</p>
+                                <button onClick={() => {navigate("/donate2")}} className='bg-[#26235C] text-white rounded-md w-32 mt-2 w-full h-8 hover:bg-purple-500'>Donate Now!</button>
+                            </button>
                         </div>
 
                     </div>
@@ -91,27 +94,30 @@ const Donate1 = () => {
                     <div className='flex flex-row  w-full h-40 justify-center mt-2'>
                         
                         <div className='flex flex-col border border-black shadow-md w-40 bg-white rounded-2xl h-40 justify-center mr-20'>
-                            <div className='flex flex-col  mx-4  mb-8 justify-center items-center'>
+                            <button className='flex flex-col  mx-4  mb-4 justify-center items-center'>
                                 <img src="../components/Chhipa.png" alt="logo" className=' w-12 h-12 '></img>
-                                <p className='font-bold text-lg mb-2'>Chiipa</p>
-                                <button onClick={() => {navigate("/donate2")}} className='bg-[#26235C] text-white rounded-md  w-full h-8'>Donate Now!</button>
-                            </div>
+                                <p className='font-bold text-lg'>Chiipa</p>
+                                <p className='font-semibold text-sm'>Flood Relief</p>
+                                <button onClick={() => {navigate("/donate2")}} className='bg-[#26235C] text-white rounded-md w-32 mt-2 w-full h-8 hover:bg-purple-500'>Donate Now!</button>
+                            </button>
                         </div>
 
                         <div className='flex flex-col border border-black w-40 bg-white rounded-2xl h-40 justify-center mr-20'>
-                            <div className='flex flex-col  mx-4  mb-8 justify-center items-center'>
+                            <button className='flex flex-col  mx-4  mb-4 justify-center items-center'>
                                 <img src="../components/jdc.png" alt="logo" className=' w-12 h-12 '></img>
-                                <p className='font-bold text-lg mb-2'>JDC</p>
-                                <button onClick={() => {navigate("/donate2")}} className='bg-[#26235C] text-white rounded-md  w-full h-8'>Donate Now!</button>
-                            </div>
+                                <p className='font-bold text-lg'>JDC</p>
+                                <p className='font-semibold text-sm'>Fire Relief</p>
+                                <button onClick={() => {navigate("/donate2")}} className='bg-[#26235C] text-white rounded-md w-32 mt-2 w-full h-8 hover:bg-purple-500'>Donate Now!</button>
+                            </button>
                         </div>
                         
                         <div className='flex flex-col border border-black w-40 bg-white rounded-2xl h-40 justify-center'>
-                            <div className='flex flex-col  mx-4  mb-8 justify-center items-center'>
-                                <img src="../components/alkhidmat.jpeg" alt="logo" className=' w-14 h-14 '></img>
-                                <p className='font-bold text-lg mb-2'>Al-khidmat</p>
-                                <button onClick={() => {navigate("/donate2")}} className='bg-[#26235C] text-white rounded-md  w-full h-8'>Donate Now!</button>
-                            </div>
+                            <button className='flex flex-col  mx-4  mb-4 justify-center items-center'>
+                                <img src="../components/alkhidmat.jpeg" alt="logo" className=' w-12 h-12 '></img>
+                                <p className='font-bold text-lg'>Al-khidmat</p>
+                                <p className='font-semibold text-sm'>Old-age Homes</p>
+                                <button onClick={() => {navigate("/donate2")}} className='bg-[#26235C] text-white rounded-md w-32 mt-2 w-full h-8 hover:bg-purple-500'>Donate Now!</button>
+                            </button>
                         </div>
 
                     </div>

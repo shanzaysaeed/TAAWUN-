@@ -20,13 +20,13 @@ function Homepage() {
         </div>
       </div>
       <div className="absolute top-12 right-16 z-20 flex flex-col items-center justify-center pt-4 pr-1">
-        <button className="mb-3 w-full px-12 py-2 rounded-md bg-purple-400 text-black font-bold shadow-lg border-2 border-black" type="button" onClick={() => {navigate('/admin_signin');}}>Admin</button>
-        <button className="mb-3 w-full px-12 py-2 rounded-md bg-purple-400 text-black font-bold shadow-lg border-2 border-black" type="button" onClick={() => {navigate('/ngo');}}>NGO</button>
-        <button className="mb-3 w-full px-12 py-2 rounded-md bg-purple-400 text-black font-bold shadow-lg border-2 border-black" type="button" onClick={() => {navigate('/donor');}}>Donor</button>
-        <button className="w-full px-12 py-2 rounded-md bg-purple-400 text-black font-bold shadow-lg border-2 border-black" type="button" onClick={() => {navigate('/rider');}}>Rider</button>
+        <button className="mb-3 w-full px-12 py-2 rounded-md bg-green-500 text-black font-bold shadow-lg border-2 border-black" type="button" onClick={() => {navigate('/admin_signin');}}>Admin</button>
+        <button className="mb-3 w-full px-12 py-2 rounded-md bg-green-500 text-black font-bold shadow-lg border-2 border-black" type="button" onClick={() => {navigate('/ngo');}}>NGO</button>
+        <button className="mb-3 w-full px-12 py-2 rounded-md bg-green-500 text-black font-bold shadow-lg border-2 border-black" type="button" onClick={() => {navigate('/donor');}}>Donor</button>
+        <button className="w-full px-12 py-2 rounded-md bg-green-500 text-black font-bold shadow-lg border-2 border-black" type="button" onClick={() => {navigate('/rider');}}>Rider</button>
       </div>
 
-      <div className='bar absolute bottom-14 left-60 z-10 w-4/6 h-2/5 bg-white bg-opacity-50 rounded-xl border border-black flex justify-center items-center'>
+      <div className='bar absolute bottom-14 left-60 z-10 w-4/6 h-2/5 bg-white bg-opacity-60 rounded-xl border border-black flex justify-center items-center'>
         <div className="p-6">
           <h1 className='text-3xl font-bold mb-5'>What is Ta'awun?</h1>
           <p className='mb-4 font-semibold text-lg'>Ta'awun is an NGO Management System. Natural Disasters have always been the perpetrators of havoc in Pakistan,

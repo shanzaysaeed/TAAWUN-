@@ -13,6 +13,10 @@ import DonorLanding from './components/donor/DonorLanding';
 import DonorSignup from './components/donor/DonorSignup';
 import DonorSignin from './components/donor/DonorSignin';
 import DonorDashboard from './components/donor/DonorDashboard';
+import Donate1 from './components/donor/donate1';
+import Donate2 from './components/donor/donate2';
+import Donate3 from './components/donor/donate3';
+import Donate4 from './components/donor/donate4';
 import RiderLanding from './components/rider/RiderLanding';
 import RiderSignup from './components/rider/RiderSignup';
 import RiderSignin from './components/rider/RiderSignin';
@@ -35,6 +39,10 @@ function App() {
           <Route path='/donor_signin' element={<DonorSignin />} />
           <Route path='/donor_signup' element={<DonorSignup />} />
           <Route path='/donor_home' element={<RoleProtectedRoute role='Donor'><DonorDashboard /></RoleProtectedRoute>}/>
+          <Route path='/donate1' element={<RoleProtectedRoute role='Donor'><Donate1 /></RoleProtectedRoute>}/>
+          <Route path='/donate2' element={<RoleProtectedRoute role='Donor'><Donate2 /></RoleProtectedRoute>}/>
+          <Route path='/donate3' element={<RoleProtectedRoute role='Donor'><Donate3 /></RoleProtectedRoute>}/>
+          <Route path='/donate4' element={<RoleProtectedRoute role='Donor'><Donate4 /></RoleProtectedRoute>}/>
           <Route path='/rider' element={<RiderLanding />} />
           <Route path='/rider_signin' element={<RiderSignin />} />
           <Route path='/rider_signup' element={<RiderSignup />} />

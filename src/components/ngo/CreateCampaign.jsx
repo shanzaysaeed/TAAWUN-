@@ -75,11 +75,20 @@ const CreateCampaign = () => {
       try{
         setLoading(true);
         const userRef = collection(db, "campaigns");
-        const ngoDocRef = doc(userRef, title);
-        const storageRef = ref(storage, `Campaigns/${title}_${media.name}`);
-        await uploadBytes(storageRef, media);
-        const pictureURL = await getDownloadURL(storageRef);
-        await setDoc(ngoDocRef, {
+        const campDocRef = doc(userRef, title);
+
+        let pictureURL = ""
+        
+        if (!media) {
+          pictureURL = "https://firebasestorage.googleapis.com/v0/b/taawun-cs360.appspot.com/o/Campaigns%2Fbc.jpg?alt=media&token=2876a65f-5949-4c8e-8cba-1861d3221848"
+        
+        } else {
+          const storageRef = ref(storage, `ngo_logos/${title}_${media.name}`);
+          await uploadBytes(storageRef, media); // upload profile picture file to Firebase Storage
+          pictureURL = await getDownloadURL(storageRef); // get the URL of the uploaded profile picture
+        }
+
+        await setDoc(campDocRef, {
           title,
           description,
           amount,
@@ -87,7 +96,8 @@ const CreateCampaign = () => {
           location,
           pictureURL,
           lat,
-          lng
+          lng,
+          dateCreated: new Date()
         });
         setLoading(false);
         navigate("/campaigns")

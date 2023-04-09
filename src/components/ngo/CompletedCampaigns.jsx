@@ -113,18 +113,13 @@ const CompletedCampaigns = () => {
                 </div>
 
                 <div className="icons col-span-1 flex flex-col justify-between items-center">
-                  <div className="buttons flex">
-                    <button className="w-fit mx-1">
-                      <img src="../components/editing.png" alt="Edit Icon" className="w-4/5 h-4/5"/>
-                    </button>
-                    <button className="w-fit mx-1">
-                      <img src="../components/delete.png" alt="Delete Icon" className="w-4/5 h-4/5"/>
-                    </button>
-                  </div>
-
+                  <button className="w-5/6 mx-1 flex flex-col items-center">
+                    <img className='w-1/2' src="../components/analytics.png" alt="" />
+                    <p className='text-xs'>Show Analytics</p>
+                  </button>
                   <div className="location pt-2 flex items-center justify-center">
-                    <img className="w-1/6" src="../components/placeholder.png" alt="Location Icon" />
-                    <p className="font-bold">{campaign.location.split(",")[0]}</p>
+                    <img className="w-1/6" src="../components/placeholder.png" alt="Location_Icon" />
+                    <p className="font-bold text-sm">Lahore</p>
                   </div>
                 </div>
                 

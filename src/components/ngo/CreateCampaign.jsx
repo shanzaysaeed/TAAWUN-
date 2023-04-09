@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { db, storage } from "../../firebase";
-import { setDoc, collection, doc } from "firebase/firestore";
+import { setDoc, collection, doc, getDocs, query, where } from "firebase/firestore";
 import { uploadBytes, ref, getDownloadURL } from "firebase/storage";
 import NGOSideBar from "../../views/NGOSideBar";
 
@@ -76,10 +76,19 @@ const CreateCampaign = () => {
     if (data.status === "OK") {
       const { lat, lng } = data.results[0].geometry.location;
       try{
-        setLoading(true);
-        const userRef = collection(db, "campaigns");
-        const campDocRef = doc(userRef, title);
+        const campaignsRef = collection(db, "campaigns");
 
+        const querySnapshot = await getDocs(
+          query(campaignsRef, where("title", "==", title))
+        );
+    
+        if (!querySnapshot.empty) {
+          setLoading(false);
+          setError("A similar campaign already exist. You can collaborate on that");
+          return;
+        }
+    
+        const campDocRef = doc(campaignsRef, title);
         let pictureURL = ""
         
         if (!media) {

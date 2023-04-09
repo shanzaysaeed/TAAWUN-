@@ -57,7 +57,7 @@ const CreateCampaignSuccessful = () => {
             onClick={() => navigate("/vol1")}
           >
             <img className="h-5" src="../components/volunteer.png" alt="LMAO" />
-            <a href="/vol1" className="px-4">
+            <a href="/vol0" className="px-4">
               Volunteer Position
             </a>
           </button>

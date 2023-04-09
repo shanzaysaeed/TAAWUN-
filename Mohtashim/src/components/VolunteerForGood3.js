@@ -7,33 +7,27 @@ import { storage } from "../firebaseConfig";
 import { uploadBytes, ref, getDownloadURL } from "firebase/storage";
 import { useNavigate } from "react-router-dom";
 
-const VolunteerPosition1 = () => {
-  const [title, setTitle] = useState();
-  const [desc, setDesc] = useState();
-  const [workingHours, setWorkingHours] = useState();
-  const [duration, setDuration] = useState();
-  const [timings, setTimings] = useState();
-  const [myPicture, setMyPicture] = useState();
-  const userCollectionRef = collection(db, "contactData");
+const VolunteerForGood3 = () => {
+  const [motivation, setMotivation] = useState();
+  const [experience, setExperience] = useState();
+  const [myResume, setMyResume] = useState();
+  const userCollectionRef = collection(db, "VolunteerApplyingForPosition");
   const contactData = doc(userCollectionRef)
   const navigate = useNavigate();
 
   const handleNavigate = async () => {
-    navigate("/vol0");
+    navigate("/vfg1");
   }
   const handleSubmit = async (e) => {
 
     e.preventDefault();
-    const storageRef = ref(storage, `posters/${title}_${myPicture.name}`)
-    await uploadBytes(storageRef, myPicture)
-    const pictureURL = await getDownloadURL(storageRef)
+    const storageRef = ref(storage, `volunteerApplying/${setMyResume.name}`)
+    await uploadBytes(storageRef, myResume)
+    const resumeURL = await getDownloadURL(storageRef)
     await setDoc(contactData, {
-      title: title,
-      desc: desc,
-      workingHours: workingHours,
-      duration: duration,
-      timings: timings,
-      pictureURL
+      motivation: motivation,
+      experience: experience,
+      resumeURL
     });
     handleNavigate();
   };
@@ -119,69 +113,41 @@ const VolunteerPosition1 = () => {
             <img className="px-1" src="../components/edhilogo.png" alt="HAHAH"/>
           </div>
         </div>
-
+        {/* Gray Area */}
         <div className="form bg-[#F2F2F2] h-full flex flex-col justify-between mt-8 pt-8 px-20 mb-3 pb-3 rounded-xl">
+            <p className="heading h1 text-xl font-bold border-b border-slate-400 pb-2">Fund Raising by Shahid Afridi Foudation</p>
           <div className="title flex flex-col">
-            <label className="py-1">Enter the title of your campaign</label>
-            <input
+            <label className="py-1">Why do you want this position (tell us about your motivation)?</label>
+            <textarea
               type="text"
               className="form-control rounded-md px-2 py-1"
               id="exampleFormControlInput1"
               onChange={(event) => {
-                setTitle(event.target.value);
+                setMotivation(event.target.value);
               }}
             />
           </div>
 
           <div className="description flex flex-col">
-            <label className="py-1">Short Description about the campaign</label>
+            <label className="py-1">Any prior experience?</label>
             <textarea
               className=" rounded-md px-2 py-1"
               id="exampleFormControlTextarea1"
               rows="3"
               onChange={(event) => {
-                setDesc(event.target.value);
+                setExperience(event.target.value);
               }}
             ></textarea>
           </div>
           <div class="siappa flex justify-between">
-            <div className="working-hours upload-picture flex flex-col justify-between h-20">
-              <div className="flex justify-between">
-                <label className="pr-2">Working Hours</label>
-                <input
-                  className="rounded-md px-2 py-1"
-                  type="text"
-                  onChange={(event) => {
-                    setWorkingHours(event.target.value);
-                  }}
-                />
-              </div>
-              <div className="flex justify-between">
-                <label className="pr-2">Timings</label>
-                <input className="rounded-md px-2 py-1" type="text" onChange={(event) => {
-                setTimings(event.target.value);
-              }} />
-              </div>
-            </div>
-
-            <div className="duration timings flex flex-col justify-between h-20">
-              <div className="">
-                <label className="pr-2">Duration</label>
-                <input className="rounded-md px-2 py-1" type="text" onChange={(event) => {
-                setDuration(event.target.value);
-              }}/>
-              </div>
-              <div className="flex justify-between items-center">
-                <label className="">Upload Poster</label>
+                <label className="">Upload Resume:</label>
                 <input className="w-2/3" type="file" id="formFile" onChange={(event) => {
-                setMyPicture(event.target.files[0]);
+                setMyResume(event.target.files[0]);
               }} />
-              </div>
-            </div>
           </div>
           <div className="buttons flex self-center">
             <button className="bg-[#CCCCCC] hover:bg-[#B6B0B0] text-black font-bold rounded-lg w-24 mx-8 py-1.5" onClick={()=>{
-              navigate("/vol0");
+              navigate("/vfg2");
             }}>
               Go Back
             </button>
@@ -196,4 +162,4 @@ const VolunteerPosition1 = () => {
   );
 };
 
-export default VolunteerPosition1;
+export default VolunteerForGood3;

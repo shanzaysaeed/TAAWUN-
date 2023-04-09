@@ -57,12 +57,19 @@ const VolunteerForGood1 = () => {
         </div>
       </div>
       <div className="right-box bg-[#D5C6FF] w-3/4 px-10 pt-10 flex flex-col">
-        <div className="text-image">
-          <h1 className="text-3xl font-semibold leading-none">
-            Volunteer Position
-          </h1>
+        <div className="top flex items-center justify-between ">
+          <h1 className="text-3xl font-semibold">Volunteer For Greater Good</h1>
+          <div className="flex items-center h-fit w-fit">
+            <p className="text-md font-semibold px-1 w-fit">
+              Mohtashim
+            </p>
+            <img
+              className="px-1 w-14"
+              src="../components/mohtashim.png"
+              alt="HAHAH"
+            />
+          </div>
         </div>
-
         <div className="form bg-[#F2F2F2] h-full flex flex-col justify-between mt-8 pt-8 px-20 mb-3 pb-3 rounded-xl">
           <div class="search">
             <form>
@@ -94,7 +101,7 @@ const VolunteerForGood1 = () => {
                   type="search"
                   id="default-search"
                   class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Search Mockups, Logos..."
+                  placeholder="Search"
                   required
                 />
                 <button
@@ -114,7 +121,7 @@ const VolunteerForGood1 = () => {
                 />
                 <div className="text px-4">
                   <p className="h1 text-xl font-bold">
-                    Shahid Afridi Foudation
+                  Fund Raising by Shahid Afridi Foudation
                   </p>
                   <p className="text-xs">Not for profit</p>
                   <p className="text-xs">
@@ -126,9 +133,9 @@ const VolunteerForGood1 = () => {
                 </div>
               </div>
               <div className="dets h-full">
-                <p className="text-xs">Activity Organised: 4</p>
-                <p className="text-xs">Volunteers Engaged: 57</p>
-                <button className="text-xs bg-green-500 p-1 rounded-md mt-2" onClick={()=>{
+                <p className="text-xs">Activity Applied: 4</p>
+                <p className="text-xs">Volunteers Working: 57</p>
+                <button className="text-xs bg-green-500 p-1 px-2 rounded-md mt-2" onClick={()=>{
                   navigate("/vfg2");
                 }} >
                   Visit Profile
@@ -145,7 +152,7 @@ const VolunteerForGood1 = () => {
                 />
                 <div className="text px-4">
                   <p className="h1 text-xl font-bold">
-                    Shahid Afridi Foudation
+                    Iftaar Drive 
                   </p>
                   <p className="text-xs">Not for profit</p>
                   <p className="text-xs">
@@ -157,9 +164,9 @@ const VolunteerForGood1 = () => {
                 </div>
               </div>
               <div className="dets h-full">
-                <p className="text-xs">Activity Organised: 9</p>
-                <p className="text-xs">Volunteers Engaged: </p>
-                <button className="text-xs bg-green-500 p-1 rounded-md mt-2">
+                <p className="text-xs">Volunteers Applied: 90</p>
+                <p className="text-xs">Volunteers Working: 69</p>
+                <button className="text-xs bg-green-500 p-1 px-2 rounded-md mt-2">
                   Visit Profile
                 </button>
               </div>

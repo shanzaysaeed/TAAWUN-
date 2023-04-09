@@ -4,7 +4,7 @@ import React from "react";
 // import { collection, addDoc } from "firebase/firestore";
 // import { useNavigate } from 'react-router-dom';
 
-const VolunteerPosition2 = () => {
+const VolunteerPositionRejected = () => {
   // const navigate = useNavigate();
   //   // const [title, setTitle] = useState();
   //   const [overview, setOverview] = useState();
@@ -68,7 +68,7 @@ const VolunteerPosition2 = () => {
           </button>
           <button className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-r-3xl">
             <img className="h-5" src="../components/map.png" alt="LMAO" />
-            <a href="/" className="px-4">
+            <a href="/mapView" className="px-4">
               Map View
             </a>
           </button>
@@ -110,13 +110,13 @@ const VolunteerPosition2 = () => {
         {/* div for buttons */}
         <div className="buttons flex justify-between pt-8">
           <div className="leftButtons flex">
-            <button className="btn-ongoing rounded-md bg-[#AA8CFF] px-2 py-1 mr-4">
+            <button className="btn-ongoing rounded-md bg-[#FFFFFF] px-2 py-1 mr-4">
               <a href="/vol2">Live Applications</a>
             </button>
             <button className="btn-successful rounded-md bg-[#FFFFFF] px-2 py-1 mr-4">
               <a href="/volApproved">Approved Applications</a>
             </button>
-            <button className="btn-successful rounded-md bg-[#FFFFFF] px-2 py-1">
+            <button className="btn-successful rounded-md bg-[#AA8CFF] px-2 py-1">
               <a href="/volRejected">Rejected Applications</a>
             </button>
           </div>
@@ -136,96 +136,9 @@ const VolunteerPosition2 = () => {
               <p className="text-sm"><b>Volunteers Accepted</b>: 12</p>
             </div>
           </div>
-          {/* Position#1 */}
-          <div className="campaign flex items-center bg-[#FFFFFF] rounded-md py-1 px-4 justify-between">
-            <div class="image-and-title flex w-full">
-              <img className="w-16" src="../components/mohtashim.png" alt="" />
-              <div className="text px-8 flex flex-col justify-between">
-                <h1 className="text-xl font-semibold">Mohtashim Clown</h1>
-                <div className="email-and-contact flex">
-                  <div className="emial flex pr-4">
-                    <img
-                      className="w-4"
-                      src="../components/contact-mail.png"
-                      alt=""
-                    />
-                    <p className="text-xs pl-2">0333-5634122</p>
-                  </div>
-                  <div className="contact flex pl-4">
-                    <img
-                      className="w-4"
-                      src="../components/phone-call.png"
-                      alt=""
-                    />
-                    <p className="text-xs pl-2">pain@gmail.com</p>
-                  </div>
-                </div>
-                <div className="address">
-                  Address: 123, Street 4, block D, DHA Phase 5, Lahore.
-                </div>
-              </div>
-            </div>
-            <div class="icons flex flex-col w-1/5 justify-between px-2 items-center h-full">
-              <div className="buttons flex w-2/3">
-                <button className="w-fit mx-1">
-                  <img src="../components/correct.png" alt="" />
-                </button>
-                <button className="w-fit mx-1">
-                  <img src="../components/remove.png" alt="" />
-                </button>
-              </div>
-              <a href="/vol3">
-              <p className="font-normal text-sm bg-[#2f2c72] hover:bg-[#1b184a] text-[#FFFFFF] px-2 py-0.5 rounded-md">See Details</p>
-              </a>
-            </div>
-          </div>
           {/* Position#2 */}
-          <div className="campaign flex items-center bg-[#FFFFFF] rounded-md py-1 px-4 justify-between">
-            <div class="image-and-title flex w-full">
-              <img className="w-16" src="../components/maryam.png" alt="" />
-              <div className="text px-8 flex flex-col justify-between">
-                <h1 className="text-xl font-semibold">Maryam Shakeel</h1>
-                <div className="email-and-contact flex">
-                  <div className="emial flex pr-4">
-                    <img
-                      className="w-4"
-                      src="../components/contact-mail.png"
-                      alt=""
-                    />
-                    <p className="text-xs pl-2">0333-9912755</p>
-                  </div>
-                  <div className="contact flex pl-4">
-                    <img
-                      className="w-4"
-                      src="../components/phone-call.png"
-                      alt=""
-                    />
-                    <p className="text-xs pl-2">lmao@gmail.com</p>
-                  </div>
-                </div>
-                <div className="address">
-                  Address: 123, Street 4, block D, DHA Phase 5, Lahore.
-                </div>
-              </div>
-            </div>
-            <div class="icons flex flex-col w-1/5 justify-between px-2 items-center h-full">
-              <div className="buttons flex w-2/3">
-                <button className="w-fit mx-1">
-                  <img src="../components/correct.png" alt="" />
-                </button>
-                <button className="w-fit mx-1">
-                  <img src="../components/remove.png" alt="" />
-                </button>
-              </div>
-              <a href="/vol3">
-              <p className="font-normal text-sm bg-[#2f2c72] hover:bg-[#1b184a] text-[#FFFFFF] px-2 py-0.5 rounded-md">See Details</p>
-              </a>
-            </div>
-          </div>
-
-          {/* Position#3 */}
-          <div className="campaign flex items-center bg-[#FFFFFF] rounded-md py-1 px-4 justify-between">
-            <div class="image-and-title flex w-full">
+          <div className="campaign flex items-center bg-[#FFFFFF] rounded-md py-1 px-4 justify-between ">
+          <div class="image-and-title flex">
               <img className="w-16" src="../components/zay.png" alt="" />
               <div className="text px-8 flex flex-col justify-between">
                 <h1 className="text-xl font-semibold">Chocolate</h1>
@@ -253,20 +166,58 @@ const VolunteerPosition2 = () => {
               </div>
             </div>
             <div class="icons flex flex-col w-1/5 justify-between px-2 items-center h-full">
-              <div className="buttons flex w-2/3">
-                <button className="w-fit mx-1">
-                  <img src="../components/correct.png" alt="" />
-                </button>
-                <button className="w-fit mx-1">
+              <div className="buttons flex w-1/3">
+                <div className="w-fit mx-1">
                   <img src="../components/remove.png" alt="" />
-                </button>
+                </div>
               </div>
-              <a href="/vol3">
-              <p className="font-normal text-sm bg-[#2f2c72] hover:bg-[#1b184a] text-[#FFFFFF] px-2 py-0.5 rounded-md">See Details</p>
+              <a href="/volPSDAA">
+                <p className="font-normal text-sm bg-[#2f2c72] hover:bg-[#1b184a] text-[#FFFFFF] px-2 py-0.5 rounded-md">See Details</p>
               </a>
             </div>
           </div>
-          <a href="/vol0" className="button self-center rounded-md bg-[#2196F3] px-2 py-0.5">
+
+          {/* Another position */}
+          <div className="campaign flex items-center bg-[#FFFFFF] rounded-md py-1 px-4 justify-between">
+          <div class="image-and-title flex">
+              <img className="w-16" src="../components/zay.png" alt="" />
+              <div className="text px-8 flex flex-col justify-between">
+                <h1 className="text-xl font-semibold">Chocolate</h1>
+                <div className="email-and-contact flex">
+                  <div className="emial flex pr-4">
+                    <img
+                      className="w-4"
+                      src="../components/contact-mail.png"
+                      alt=""
+                    />
+                    <p className="text-xs pl-2">0333-4568009</p>
+                  </div>
+                  <div className="contact flex pl-4">
+                    <img
+                      className="w-4"
+                      src="../components/phone-call.png"
+                      alt=""
+                    />
+                    <p className="text-xs pl-2">butterfly@gmail.com</p>
+                  </div>
+                </div>
+                <div className="address">
+                  Address: 123, Street 4, block D, DHA Phase 5, Lahore.
+                </div>
+              </div>
+            </div>
+            <div class="icons flex flex-col w-1/5 justify-between px-2 items-center h-full">
+              <div className="buttons flex w-1/3">
+                <div className="w-fit mx-1">
+                  <img src="../components/remove.png" alt="" />
+                </div>
+              </div>
+              <a href="/volPSDAA">
+                <p className="font-normal text-sm bg-[#2f2c72] hover:bg-[#1b184a] text-[#FFFFFF] px-2 py-0.5 rounded-md">See Details</p>
+              </a>
+            </div>
+          </div>
+          <a href="/vol2" className="button self-center rounded-md bg-[#2196F3] px-2 py-0.5">
             <p className="text-slate-50">Go Back</p>
           </a>
         </div>
@@ -275,4 +226,4 @@ const VolunteerPosition2 = () => {
   );
 };
 
-export default VolunteerPosition2;
+export default VolunteerPositionRejected;

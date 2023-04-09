@@ -7,6 +7,7 @@ import NGOSideBar from "../../views/NGOSideBar";
 
 const CreateCampaign = () => {
   const navigate = useNavigate();
+  const loggedIn = JSON.parse(localStorage.getItem('user'))
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [amount, setAmount] = useState("");
@@ -21,6 +22,8 @@ const CreateCampaign = () => {
   const [locationError, setLocationError] = useState(null);
   const [autocomplete, setAutocomplete] = useState(null);
   const locationInputRef = useRef(null);
+
+  const localUser = JSON.parse(localStorage.getItem('user'));
 
   useEffect(() => {
     if (window.google) {
@@ -92,12 +95,15 @@ const CreateCampaign = () => {
           title,
           description,
           amount,
+          amountCollected:0,
           details,
           location,
           pictureURL,
           lat,
           lng,
-          dateCreated: new Date()
+          dateCreated: new Date(),
+          createdBy: localUser.name,
+          status: "Incomplete",
         });
         setLoading(false);
         navigate("/campaigns")
@@ -135,17 +141,17 @@ const CreateCampaign = () => {
             <h1 className="text-3xl font-bold">Campaigns</h1>
           </div>
           <div className="flex items-center">
-            <p className="text-2xl font-semibold px-1">EDHI</p>
-            <img className="px-1 w-20 h-18" src="../components/edhhi.png" alt="ngo_logo" />
+            <p className="px-1 text-black font-semibold underline text-lg mt-4 mr-1">{loggedIn.name}</p>
+            <img src={loggedIn.logoURL} alt="profile" className='rounded-full flex-shrink-0 px-1 h-14 w-16' />
           </div>
         </div>
 
-        <div className="middle pt-6">
+        <div className="middle pt-5">
           <p className="font-bold">Create a Campaign</p>
         </div>
 
 
-        <div className="bottom pt-4 px-16 w-5/6">
+        <div className="bottom pt-3 px-16 w-5/6">
           <div className="pb-4 pt-2">
             <h1 className="text-2xl font-bold">Info</h1>
           </div>

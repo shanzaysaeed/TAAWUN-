@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import NGOSideBar from "../../views/NGOSideBar";
-import { collection, query, where, getDocs, orderBy } from "firebase/firestore";
+import { collection, query, where, getDocs, orderBy, deleteDoc, doc } from "firebase/firestore";
 import { db } from "../../firebase";
 
 const Campaigns = () => {
@@ -55,6 +55,16 @@ const Campaigns = () => {
     }
   }, [campaigns]);
 
+  const handleDelete = async (title) => {
+    try {
+      await deleteDoc(doc(db, "campaigns", title));
+      const newCampaigns = campaigns.filter(campaign => campaign.title !== title);
+      setCampaigns(newCampaigns);
+    } catch (error) {
+      console.log("Error deleting campaign: ", error);
+    }
+  };
+  
 
   return (
     <div className="flex bg-[#D5C6FF] justify-between">
@@ -117,9 +127,10 @@ const Campaigns = () => {
                     <button className="w-fit mx-1">
                       <img src="../components/editing.png" alt="Edit Icon" className="w-4/5 h-4/5"/>
                     </button>
-                    <button className="w-fit mx-1">
+                    <button className="w-fit mx-1" onClick={() => {handleDelete(campaign.title)}}>
                       <img src="../components/delete.png" alt="Delete Icon" className="w-4/5 h-4/5"/>
                     </button>
+
                   </div>
 
                   <div className="location pt-2 flex items-center justify-center">

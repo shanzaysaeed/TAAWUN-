@@ -58,7 +58,7 @@ const Campaigns = () => {
             onClick={() => navigate("/vol1")}
           >
             <img className="h-5" src="../components/volunteer.png" alt="LMAO" />
-            <a href="/vol1" className="px-4">
+            <a href="/vol0" className="px-4">
               Volunteer Position
             </a>
           </button>
@@ -124,9 +124,9 @@ const Campaigns = () => {
             </div>
             <div class="icons flex flex-col w-1/5 justify-between px-2 items-center">
               <div className="buttons flex">
-                <button className="w-fit mx-1">
+                <a href="/cc2" className="w-fit mx-1">
                   <img src="../components/editing.png" alt="" />
-                </button>
+                </a>
                 <button className="w-fit mx-1">
                   <img src="../components/delete.png" alt="" />
                 </button>
@@ -160,9 +160,9 @@ const Campaigns = () => {
             </div>
             <div class="icons flex flex-col w-1/5 justify-between px-2 items-center">
               <div className="buttons flex">
-                <button className="w-fit mx-1">
+                <a href="/cc2" className="w-fit mx-1">
                   <img src="../components/editing.png" alt="" />
-                </button>
+                </a>
                 <button className="w-fit mx-1">
                   <img src="../components/delete.png" alt="" />
                 </button>
@@ -195,9 +195,9 @@ const Campaigns = () => {
             </div>
             <div class="icons flex flex-col w-1/5 justify-between px-2 items-center">
               <div className="buttons flex">
-                <button className="w-fit mx-1">
+                <a href="/cc2" className="w-fit mx-1">
                   <img src="../components/editing.png" alt="" />
-                </button>
+                </a>
                 <button className="w-fit mx-1">
                   <img src="../components/delete.png" alt="" />
                 </button>

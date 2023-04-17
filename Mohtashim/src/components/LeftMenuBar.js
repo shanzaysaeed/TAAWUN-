@@ -40,11 +40,11 @@ const LeftMenuBar = ()=>{
                     </button>
                     <button className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-r-3xl">
                         <img className="h-5" src="../components/map.png" alt="LMAO"/>
-                        <a href="/" className="px-4">Map View</a>
+                        <a href="/mapView" className="px-4">Map View</a>
                     </button>
                     <button className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-r-3xl" onClick={() => navigate("/vol1")}>
                         <img className="h-5" src="../components/volunteer.png" alt="LMAO"/>
-                        <a href="/vol1" className="px-4">Volunteer Position</a>
+                        <a href="/vol0" className="px-4">Volunteer Position</a>
                     </button>
                     <button className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-r-3xl">
                         <img className="h-5" src="../components/settings.png" alt="LMAO"/>

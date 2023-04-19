@@ -32,9 +32,11 @@ const LeftMenuBarVolunteer = () => {
               Volunteer
             </a>
           </button>
-          <button className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-r-3xl">
+          <button className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-r-3xl" onClick={()=>{
+            navigate('dvh');
+          }}>
             <img className="h-5" src="../components/history.png" alt="LMAO" />
-            <a href="/" className="px-4">
+            <a href="/dvh" className="px-4">
               Donation/Volunteer History
             </a>
           </button>

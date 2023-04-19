@@ -100,7 +100,7 @@ function App() {
             <p className='text-black text-xl font-semibold ml-6 mt-4'>Enter your phone number:</p>
             <input className='bg-gray-300 rounded-md p-1 w-80 mt-2' type='number' placeholder='Contact number'></input>
             <p className='text-black text-xl font-semibold ml-6 mt-4'>Enter your account number:</p>
-            <input className='bg-gray-300 rounded-md p-1 w-80 mt-2' type='number' placeholder='Contact number'></input>
+            <input className='bg-gray-300 rounded-md p-1 w-80 mt-2' type='number' placeholder='Account number'></input>
             <p className='text-black text-xl font-semibold ml-6 mt-2'>Enter the amount:</p>
             <input className='bg-gray-300 rounded-md p-1 w-80 mt-2' type='number' placeholder='Amount'></input>
             <p className='text-black text-xl font-semibold ml-6 mt-2'>Enter your pin:</p>

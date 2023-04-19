@@ -72,8 +72,8 @@ const VolunteerForGood3 = () => {
           </button>
           <button className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-r-3xl">
             <img className="h-5" src="../components/history.png" alt="LMAO" />
-            <a href="/" className="px-4">
-              Donation History
+            <a href="/dvh" className="px-4">
+            Donation/Volunteer History
             </a>
           </button>
           <button className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-r-3xl">
@@ -105,12 +105,16 @@ const VolunteerForGood3 = () => {
       {/* Right wala dabba */}
       <div class="right-box bg-[#D5C6FF] w-3/4 px-10 pt-10 flex flex-col">
         <div className="text-image flex justify-between items-center">
-          <h1 className="text-3xl font-semibold leading-none">
-            Volunteer Position
-          </h1>
-          <div className="flex items-center">
-            <p className="text-2xl font-semibold px-1">EDHI</p>
-            <img className="px-1" src="../components/edhilogo.png" alt="HAHAH"/>
+        <h1 className="text-3xl font-semibold">Volunteer For Greater Good</h1>
+          <div className="flex items-center h-fit w-fit">
+            <p className="text-md font-semibold px-1 w-fit">
+              Mohtashim
+            </p>
+            <img
+              className="px-1 w-14"
+              src="../components/mohtashim.png"
+              alt="HAHAH"
+            />
           </div>
         </div>
         {/* Gray Area */}

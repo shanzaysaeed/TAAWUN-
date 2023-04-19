@@ -18,13 +18,15 @@ import VolunteerPositionApproved from './components/VolunteerPositionApproved';
 import VolunteerPositionSeeDetailsApprovedApplication from './components/VolunteerPositionSeeDetailsApprovedApplication';
 import VolunteerPositionRejected from './components/VolunteerPositionRejected';
 import MapView from './components/MapView';
+import DonateVolunterHistory from './components/DonateVolunterHistory';
+import DonateVolunterHistory2 from './components/DonateVolunterHistory2';
 
 
 function App() {
   return (
     <div>
         <Routes>
-          <Route path='/' element={<LeftMenuBar />} />
+          {/* <Route path='/' element={<LeftMenuBar />} />
           <Route path='/vol0' element={<VolunteerPosition0/>}/>
           <Route path='/vol1' element={<VolunteerPosition1 />} />
           <Route path='/vol2' element={<VolunteerPosition2 />} />
@@ -40,14 +42,16 @@ function App() {
 
           <Route  path='/cc2' element={<CreateCampaign/>}></Route>
           <Route path='/cc1' element={<Campaigns/>}/>
-          <Route path='/ongoingC' element={<CreateCampaignOngoing/>}></Route>
+          <Route path='/ongoingC' element={<CreateCampaignOngoing/>}></Route> */}
 
-{/*           
+          
           <Route path='/' element={<LeftMenuBarVolunteer/>}></Route>
           <Route path='/vfg1' element={<VolunteerForGood1/>}></Route>
           <Route path='/vfg2' element={<VolunteerForGood2/>}></Route>
           <Route path='/vfg3' element={<VolunteerForGood3/>}/>
-          <Route path='/mapviewVolunteer' element={<MapViewVolunteer/>}/> */}
+          <Route path='dvh' element={<DonateVolunterHistory/>}/>
+          <Route path='dvh2' element={<DonateVolunterHistory2/>}/>
+          <Route path='/mapviewVolunteer' element={<MapViewVolunteer/>}/>
         </Routes>
     </div>
   );

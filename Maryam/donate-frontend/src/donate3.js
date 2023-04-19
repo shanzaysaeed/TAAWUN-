@@ -64,7 +64,7 @@ function App() {
               <p>Donate For</p>
               <p>Greater Good</p>
             </div>
-            <div className='my-8'>
+            <div className='mt-4'>
               <button className='w-40 bg-purple-400 rounded-lg text-white border border-black '>
                 Cash
               </button>
@@ -99,6 +99,8 @@ function App() {
           <div className='flex flex-col justify-center items-center'>
             <p className='text-black text-xl font-semibold ml-6 mt-4'>Enter your phone number:</p>
             <input className='bg-gray-300 rounded-md p-1 w-80 mt-2' type='number' placeholder='Contact number'></input>
+            <p className='text-black text-xl font-semibold ml-6 mt-4'>Enter your account number:</p>
+            <input className='bg-gray-300 rounded-md p-1 w-80 mt-2' type='number' placeholder='Contact number'></input>
             <p className='text-black text-xl font-semibold ml-6 mt-2'>Enter the amount:</p>
             <input className='bg-gray-300 rounded-md p-1 w-80 mt-2' type='number' placeholder='Amount'></input>
             <p className='text-black text-xl font-semibold ml-6 mt-2'>Enter your pin:</p>
@@ -124,13 +126,5 @@ function App() {
 
   );
 }
-
-
-
-
-
-
-
-
 
 export default App;

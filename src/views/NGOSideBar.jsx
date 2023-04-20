@@ -1,8 +1,22 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom";
+import { UserAuth } from '../contexts/AuthContext';
 
 function NGOSideBar() {
-    const navigate = useNavigate();
+  const { user, logout } = UserAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+      navigate('/ngo');
+      console.log('You are logged out')
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
+
+
     return (
     <div className="bg-[#F2F2F2] h-screen w-1/4 flex flex-col justify-between items-center">
     {/* Logo's div */}
@@ -69,7 +83,7 @@ function NGOSideBar() {
     {/* Log-out div */}
     <div className="log-out-btn flex w-2/5 py-2 my-8 bg-red-400 hover:bg-red-500 rounded-md justify-center items-center">
       <img className="h-5" src="../components/logout.png" alt="LMAO" />
-      <button onClick={() => navigate("/ngo_home")} className="btn px-2">Log out</button>
+      <button onClick={handleLogout} className="btn px-2">Log out</button>
     </div>
   </div>
   )

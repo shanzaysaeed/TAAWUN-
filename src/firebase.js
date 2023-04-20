@@ -5,12 +5,12 @@ import { getStorage } from "firebase/storage"; // import getStorage method
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA6J0-YdJ4l322Pw760XWaO9KIUlWju8_0",
-  authDomain: "taawun-cb2b3.firebaseapp.com",
-  projectId: "taawun-cb2b3",
-  storageBucket: "taawun-cb2b3.appspot.com",
-  messagingSenderId: "1071796471729",
-  appId: "1:1071796471729:web:73228b92b1f3ea984f5f90"
+  apiKey: "AIzaSyCzU5-F0EGkVgJhbupm8bFimSZnpujn5ig",
+  authDomain: "taawun-cs360.firebaseapp.com",
+  projectId: "taawun-cs360",
+  storageBucket: "taawun-cs360.appspot.com",
+  messagingSenderId: "37380458180",
+  appId: "1:37380458180:web:d14c61b2071c02ad4f6b91"
 };
 
 

@@ -46,6 +46,7 @@ const Donate3 = () => {
           </div>
 
           <div className='flex flex-col justify-center items-center'>
+            <p className='text-black text-xl font-semibold ml-6 mt-4'>{`Account Number: `}</p>
             <p className='text-black text-xl font-semibold ml-6 mt-4'>Enter your phone number:</p>
             <input className='bg-gray-300 rounded-md p-1 w-80 mt-2' type='tel' placeholder='Contact number'></input>
             <p className='text-black text-xl font-semibold mt-2' style={{marginLeft: '1.5rem'}}>Enter the amount:</p>

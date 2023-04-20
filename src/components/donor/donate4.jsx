@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Donate4 = () => {
   const navigate = useNavigate();
+  const loggedIn = JSON.parse(localStorage.getItem('user'))
   return (
     <div className='flex bg-purple-300 w-screen h-screen'>
       <DonorSideBar/>
@@ -24,8 +25,8 @@ const Donate4 = () => {
           </div>
 
           <div className='p-5 mr-20 flex items-start  '>
-            <p className='text-black font-semibold underline text-lg mt-6 '>Mohtashim</p>
-            <img src="../components/dp.png" alt= "profile" className='rounded-1/2 w-10 flex-shrink-0 ml-4 mt-4'></img>
+              <p className='text-black font-semibold underline text-lg mt-6 '>{loggedIn.firstName}</p>
+              <img src={loggedIn.profilePictureURL} alt="profile" className='rounded-full flex-shrink-0 ml-4 mt-4 w-12 h-12' />
           </div>
         </div>
 

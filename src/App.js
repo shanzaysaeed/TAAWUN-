@@ -21,13 +21,13 @@ import Donate2 from './components/donor/donate2';
 import Donate3 from './components/donor/donate3';
 import Donate4 from './components/donor/donate4';
 import Donate5 from './components/donor/donate5';
+import Donate51 from './components/donor/donate51';
 import Donate6 from './components/donor/donate6';
 import RiderLanding from './components/rider/RiderLanding';
 import RiderSignup from './components/rider/RiderSignup';
 import RiderSignin from './components/rider/RiderSignin';
 import RiderDashboard from './components/rider/RiderDashboard';
 import VolunteerForGood1 from './components/donor/VolunteerForGood1';
-import Test from './components/test';
 import VolunteerForGood2 from './components/donor/VolunteerForGood2';
 import VolunteerForGood3 from './components/donor/VolunteerForGood3';
 import DonateVolunterHistory from './components/donor/DonateVolunterHistory';
@@ -79,12 +79,12 @@ function App() {
           <Route path='/donate3' element={<RoleProtectedRoute role='Donor'><Donate3 /></RoleProtectedRoute>}/>
           <Route path='/donate4' element={<RoleProtectedRoute role='Donor'><Donate4 /></RoleProtectedRoute>}/>
           <Route path='/donate5' element={<RoleProtectedRoute role='Donor'><Donate5 /></RoleProtectedRoute>}/>
+          <Route path='/donate5_1' element={<RoleProtectedRoute role='Donor'><Donate51 /></RoleProtectedRoute>}/>
           <Route path='/donate6' element={<RoleProtectedRoute role='Donor'><Donate6 /></RoleProtectedRoute>}/>
           <Route path='/rider' element={<RiderLanding />} />
           <Route path='/rider_signin' element={<RiderSignin />} />
           <Route path='/rider_signup' element={<RiderSignup />} />
           <Route path='/rider_home' element={<RoleProtectedRoute role='Rider'><RiderDashboard /></RoleProtectedRoute>}/>
-          <Route path='/test' element={<Test />} />
 
           <Route path='vfg1' element= {<RoleProtectedRoute role='Donor'> <VolunteerForGood1/> </RoleProtectedRoute>}/>
           <Route path='vfg2' element= {<RoleProtectedRoute role='Donor'> <VolunteerForGood2/> </RoleProtectedRoute>}/>

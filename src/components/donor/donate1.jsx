@@ -1,10 +1,74 @@
-import React from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom';
 import DonorSideBar from '../../views/DonorSideBar';
+import { collection, query, where, getDocs, orderBy } from "firebase/firestore";
+import { db } from "../../firebase";
+import CampaignDescription from './CampaignDescription';
 
 const Donate1 = () => {
     const navigate = useNavigate();
+    const loggedIn = JSON.parse(localStorage.getItem('user'))
+    const [searchTerm, setSearchTerm] = useState("");
+    const [selectedCampaign, setSelectedCampaign] = useState(null);
+    const [createdBy, setCreatedBy] = useState(null);
+    const [campaigns, setCampaigns] = useState([]);
+    const [logoURL, setLogoURL] = useState({});
+    const [loading, setLoading] = useState(true);
+
+    const getCampaigns = useCallback(async () => {
+        const campaignCollection = collection(db, 'campaigns');
+        const q = query(campaignCollection, where('status', '==', 'Incomplete'), orderBy('createdBy', 'desc'));
+        const querySnapshot = await getDocs(q);
+        if (!querySnapshot || querySnapshot.empty) {
+          setCampaigns([]);
+          setLoading(false);
+          return;
+        }
+        const campaignList = querySnapshot.docs.map((doc) => doc.data());
+        setCampaigns(campaignList);
+      }, []);
+    
+      useEffect(() => {
+        getCampaigns();
+      }, [getCampaigns]);
+    
+      const getCampaignLogo = useCallback(async (ngoName) => {
+        if (!ngoName) {
+          return null;
+        }
+        const usersCollection = collection(db, 'users');
+        const q = query(usersCollection, where('name', '==', ngoName));
+        const querySnapshot = await getDocs(q);
+        if (querySnapshot.empty) {
+          return null;
+        }
+        const userData = querySnapshot.docs[0].data();
+        return userData.logoURL;
+      }, []);
+    
+      useEffect(() => {
+        const loadLogoUrls = async () => {
+          const urls = {};
+          for (const campaign of campaigns) {
+            urls[campaign.createdBy] = await getCampaignLogo(campaign.createdBy);
+          }
+          setLogoURL(urls);
+          setLoading(false);
+        };
+        if (campaigns.length > 0) {
+          loadLogoUrls();
+        }
+      }, [campaigns, getCampaignLogo]);
+    
+      const handleCampaignClick = (campaign) => {
+        setSelectedCampaign(campaign);
+      };
+
     return (
+        <>
+        {selectedCampaign ? (
+            <CampaignDescription campaign={selectedCampaign} createdBy={createdBy}/>
+        ) : (  
         <div className='flex bg-purple-300 w-screen h-screen'>
 
             <DonorSideBar/>
@@ -30,12 +94,12 @@ const Donate1 = () => {
 
                     <div className='p-5 mr-20 flex items-start  '>
                         <div className='flex flex-row w-full h-10 mt-2 mr-2 justify-center'>
-                            <input className='p-3 rounded-2xl bg-white border border-black w-5/6 h-8 mt-4' type='text' placeholder='Search'></input>
+                            <input className='p-3 rounded-2xl bg-white border border-black w-5/6 h-8 mt-4' type='text' placeholder='Search' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}></input>
                             <button className='absolute mt-5 ml-28'><img src="../components/search.jpeg" alt= "search" className='w-6 h-6 rounded'></img></button>
                         </div>
                         
-                        <p className='text-black font-semibold underline text-lg mt-6 '>Mohtashim</p>
-                        <img src="../components/dp.png" alt= "profile" className='rounded-1/2 w-10 flex-shrink-0 ml-4 mt-4'></img>
+                        <p className='text-black font-semibold underline text-lg mt-6 '>{loggedIn.firstName}</p>
+                        <img src={loggedIn.profilePictureURL} alt="profile" className='rounded-full flex-shrink-0 ml-4 mt-4 w-12 h-12' />
                     </div>
 
                 </div>
@@ -52,82 +116,52 @@ const Donate1 = () => {
                         <button className='w-6 h-6 bg-white rounded-full mt-2 border border-black'></button>
                     </div>
 
-                    <div className='flex flex-row  w-full h-40 mt-3 justify-center'>
-                        <div className='flex flex-col border border-black shadow-md w-40 bg-white rounded-2xl h-40 justify-center mr-20'>
-                            <button className='flex flex-col  mx-4  mb-4 justify-center items-center'>
-                                <img src="../components/akhuwat.png" alt="logo" className=' w-12 h-12 '></img>
-                                <p className='font-bold text-lg'>Akhuwat</p>
-                                <p className='font-semibold text-sm'>Earthquake Relief</p>
-                                <button onClick={() => {navigate("/donate2")}} className='bg-[#26235C] text-white rounded-md  w-32  mt-2 w-full h-8 hover:bg-purple-500'>Donate Now!</button>
+                    {loading ? (
+                        <h1 className="text-2xl ml-8 font-semibold">Loading ...</h1>
+                    ) : (
+                    <div>
+                        <div className='upper-row flex flex-row w-full h-40 mt-2 justify-center'>
+                        {campaigns.filter((campaign) => campaign.title.toLowerCase().includes(searchTerm.toLowerCase())).slice(0, 3).map((campaign) => (
+                            <div onClick={() => {handleCampaignClick(campaign); setCreatedBy(campaign.createdBy)}} className='flex flex-col border border-black shadow-md w-40 bg-white rounded-2xl h-40 justify-center mr-20'>
+                            <button className='flex flex-col mx-4 mb-4 justify-center items-center'>
+                                <img src={logoURL[campaign.createdBy]} alt="logo" className='w-12 h-12'></img>
+                                <p className='font-bold text-lg'>{campaign.createdBy}</p>
+                                <p className='font-semibold text-sm truncate'>{campaign.title}</p>
+                                <button onClick={() => {navigate("/donate2", { state: { campaign, createdBy: campaign.createdBy } })}} className='bg-[#26235C] text-white rounded-md w-32 mt-2 w-full h-8 hover:bg-purple-500'>Donate Now!</button>
                             </button>
+                            </div>
+                        ))}
                         </div>
 
-                        <div className='flex flex-col border border-black w-40 bg-white rounded-2xl h-40 justify-center mr-20'>
-                            <button className='flex flex-col  mx-4  mb-4 justify-center items-center'>
-                                <img src="../components/jdc.png" alt="logo" className=' w-12 h-12 '></img>
-                                <p className='font-bold text-lg'>JDC</p>
-                                <p className='font-semibold text-sm'>Fire Relief</p>
-                                <button onClick={() => {navigate("/donate2")}} className='bg-[#26235C] text-white rounded-md w-32 mt-2  w-full h-8 hover:bg-purple-500'>Donate Now!</button>
-                            </button>
-                        </div>
-                        
-                        <div className='flex flex-col border border-black w-40 bg-white rounded-2xl h-40 justify-center'>
-                            <button className='flex flex-col  mx-4  mb-4 justify-center items-center'>
-                                <img src="../components/edhhi.png" alt="logo" className=' w-12 h-12 '></img>
-                                <p className='font-bold text-lg'>Edhi</p>
-                                <p className='font-semibold text-sm'>Flood Relief</p>
-                                <button onClick={() => {navigate("/donate2")}} className='bg-[#26235C] text-white rounded-md w-32 mt-2 w-full h-8 hover:bg-purple-500'>Donate Now!</button>
-                            </button>
-                        </div>
-
-                    </div>
-
-                    <div className='flex flex-row justify-between'>
+                        <div className='page-navigate flex flex-row justify-between'>
                         <div className=' w-10 h-10 ml-6'>
                             <button><img src="../components/prev.png" alt="navigate"></img></button>
                         </div>
                         <div className=' w-10 h-10 mr-6'>
                             <button><img src="../components/next.png" alt="navigate"></img></button>
                         </div>
+                        </div>
+
+                        <div className='lower-row flex flex-row  w-full h-40 justify-center mt-2'>
+                        {campaigns.filter((campaign) => campaign.title.toLowerCase().includes(searchTerm.toLowerCase())).slice(3, 6).map((campaign) => (
+                            <div className='flex flex-col border border-black shadow-md w-40 bg-white rounded-2xl h-40 justify-center mr-20'>
+                            <button className='flex flex-col mx-4 mb-4 justify-center items-center'>
+                                <img src={logoURL[campaign.createdBy]} alt="logo" className='w-12 h-12'></img>
+                                <p className='font-bold text-lg'>{campaign.createdBy}</p>
+                                <p className='font-semibold text-sm truncate'>{campaign.title}</p>
+                                <button onClick={() => {navigate("/donate2", { state: { campaign, createdBy: campaign.createdBy } })}} className='bg-[#26235C] text-white rounded-md w-32 mt-2 w-full h-8 hover:bg-purple-500'>Donate Now!</button>
+                            </button>
+                            </div>
+                        ))}
+                        </div>
                     </div>
-
-                    <div className='flex flex-row  w-full h-40 justify-center mt-2'>
-                        
-                        <div className='flex flex-col border border-black shadow-md w-40 bg-white rounded-2xl h-40 justify-center mr-20'>
-                            <button className='flex flex-col  mx-4  mb-4 justify-center items-center'>
-                                <img src="../components/Chhipa.png" alt="logo" className=' w-12 h-12 '></img>
-                                <p className='font-bold text-lg'>Chiipa</p>
-                                <p className='font-semibold text-sm'>Flood Relief</p>
-                                <button onClick={() => {navigate("/donate2")}} className='bg-[#26235C] text-white rounded-md w-32 mt-2 w-full h-8 hover:bg-purple-500'>Donate Now!</button>
-                            </button>
-                        </div>
-
-                        <div className='flex flex-col border border-black w-40 bg-white rounded-2xl h-40 justify-center mr-20'>
-                            <button className='flex flex-col  mx-4  mb-4 justify-center items-center'>
-                                <img src="../components/jdc.png" alt="logo" className=' w-12 h-12 '></img>
-                                <p className='font-bold text-lg'>JDC</p>
-                                <p className='font-semibold text-sm'>Fire Relief</p>
-                                <button onClick={() => {navigate("/donate2")}} className='bg-[#26235C] text-white rounded-md w-32 mt-2 w-full h-8 hover:bg-purple-500'>Donate Now!</button>
-                            </button>
-                        </div>
-                        
-                        <div className='flex flex-col border border-black w-40 bg-white rounded-2xl h-40 justify-center'>
-                            <button className='flex flex-col  mx-4  mb-4 justify-center items-center'>
-                                <img src="../components/alkhidmat.jpeg" alt="logo" className=' w-12 h-12 '></img>
-                                <p className='font-bold text-lg'>Al-khidmat</p>
-                                <p className='font-semibold text-sm'>Old-age Homes</p>
-                                <button onClick={() => {navigate("/donate2")}} className='bg-[#26235C] text-white rounded-md w-32 mt-2 w-full h-8 hover:bg-purple-500'>Donate Now!</button>
-                            </button>
-                        </div>
-
-                    </div>
+                    )}
 
                 </div>
 
             </div>
-
-        </div>
-
+        </div> )}
+    </>
     );
 }
 

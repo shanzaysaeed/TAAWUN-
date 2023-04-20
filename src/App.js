@@ -12,6 +12,8 @@ import NgoDashboard from './components/ngo/NgoDashboard';
 import Campaigns from './components/ngo/Campaigns';
 import CompletedCampaigns from './components/ngo/CompletedCampaigns';
 import CreateCampaign from './components/ngo/CreateCampaign';
+import DonationApp from './components/ngo/DonationApp';
+import NonCash from './components/ngo/NonCash';
 import DonorLanding from './components/donor/DonorLanding';
 import DonorSignup from './components/donor/DonorSignup';
 import DonorSignin from './components/donor/DonorSignin';
@@ -40,6 +42,8 @@ function App() {
           <Route path='/ngo_signin' element={<NgoSignin />} />
           <Route path='/ngo_signup' element={<NgoSignup />} />
           <Route path='/ngo_home' element={<RoleProtectedRoute role='NGO'><NgoDashboard /></RoleProtectedRoute>}/>
+          <Route path='/apps' element={<RoleProtectedRoute role='NGO'><DonationApp /></RoleProtectedRoute>}/>
+          <Route path='/noncash_apps' element={<RoleProtectedRoute role='NGO'><NonCash /></RoleProtectedRoute>}/>
           <Route path='/campaigns' element={<RoleProtectedRoute role='NGO'><Campaigns /></RoleProtectedRoute>}/>
           <Route path='/create_camp' element={<RoleProtectedRoute role='NGO'><CreateCampaign /></RoleProtectedRoute>}/>
           <Route path='/comp_camp' element={<RoleProtectedRoute role='NGO'><CompletedCampaigns /></RoleProtectedRoute>}/>

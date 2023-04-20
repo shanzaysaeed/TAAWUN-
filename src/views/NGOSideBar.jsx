@@ -44,7 +44,7 @@ function NGOSideBar() {
           Collaboration
         </a>
       </button>
-      <button onClick={() => navigate("/ngo_home")} className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-r-3xl">
+      <button onClick={() => navigate("/apps")} className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-r-3xl">
         <img
           className="h-5"
           src="../components/google-docs.png"

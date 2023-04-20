@@ -54,6 +54,7 @@ const Donate3 = () => {
       donatedAt: Timestamp.fromDate(new Date()),
       type: "Cash",
       mode: method,
+      status: "new"
     };
     
     try {

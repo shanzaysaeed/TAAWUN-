@@ -161,10 +161,6 @@ const CreateCampaign = () => {
 
 
         <div className="bottom pt-3 px-16 w-5/6">
-          <div className="pb-4 pt-2">
-            <h1 className="text-2xl font-bold">Info</h1>
-          </div>
-
           {error && <p className="text-red-500 ">{error}</p>}
 
           <div className="title pb-2">

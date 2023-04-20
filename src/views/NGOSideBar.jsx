@@ -20,13 +20,13 @@ function NGOSideBar() {
       </button>
       <button onClick={() => navigate("/ngo_home")} className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-r-3xl">
         <img className="h-5" src="../components/donation.png" alt="LMAO" />
-        <a href="/" className="px-4">
+        <a href="/campaigns" className="px-4">
           Campaigns
         </a>
       </button>
-      <button onClick={() => navigate("/ngo_home")} className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-r-3xl">
+      <button onClick={() => navigate("/collab")} className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-r-3xl">
         <img className="h-5" src="../components/deal.png" alt="LMAO" />
-        <a href="/" className="px-4">
+        <a href="/collab" className="px-4">
           Collaboration
         </a>
       </button>
@@ -55,13 +55,13 @@ function NGOSideBar() {
       <button
         className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-r-3xl" onClick={() => navigate("/vol1")}>
         <img className="h-5" src="../components/volunteer.png" alt="LMAO" />
-        <a href="/vol1" className="px-4">
+        <a href="/vol0" className="px-4">
           Volunteer Position
         </a>
       </button>
-      <button onClick={() => navigate("/ngo_home")} className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-r-3xl">
+      <button onClick={() => navigate("/settingsNGO")} className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-r-3xl">
         <img className="h-5" src="../components/settings.png" alt="LMAO" />
-        <a href="/vol1" className="px-4">
+        <a href="/settingsNGO" className="px-4">
           Setting
         </a>
       </button>

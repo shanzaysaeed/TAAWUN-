@@ -26,7 +26,22 @@ import RiderLanding from './components/rider/RiderLanding';
 import RiderSignup from './components/rider/RiderSignup';
 import RiderSignin from './components/rider/RiderSignin';
 import RiderDashboard from './components/rider/RiderDashboard';
+import VolunteerForGood1 from './components/donor/VolunteerForGood1';
 import Test from './components/test';
+import VolunteerForGood2 from './components/donor/VolunteerForGood2';
+import VolunteerForGood3 from './components/donor/VolunteerForGood3';
+import DonateVolunterHistory from './components/donor/DonateVolunterHistory';
+import DonateVolunterHistory2 from './components/donor/DonateVolunterHistory2';
+import VolunteerPosition0 from './components/ngo/VolunteerPosition0';
+import VolunteerPosition1 from './components/ngo/VolunteerPosition1';
+import VolunteerPosition2 from './components/ngo/VolunteerPosition2';
+import VolunteerPosition3 from './components/ngo/VolunteerPosition3';
+import VolunteerPositionApproved from './components/ngo/VolunteerPositionApproved';
+import VolunteerPositionRejected from './components/ngo/VolunteerPositionRejected';
+import VolunteerPositionSeeDetailsApprovedApplication from './components/ngo/VolunteerPositionSeeDetailsApprovedApplication';
+import SettingsDonor from './components/donor/SettingsDonor';
+import SettingsNGO from './components/ngo/SettingsNGO';
+import Collaboration from './components/ngo/Collaboration';
 
 function App() {
   return (
@@ -43,6 +58,18 @@ function App() {
           <Route path='/campaigns' element={<RoleProtectedRoute role='NGO'><Campaigns /></RoleProtectedRoute>}/>
           <Route path='/create_camp' element={<RoleProtectedRoute role='NGO'><CreateCampaign /></RoleProtectedRoute>}/>
           <Route path='/comp_camp' element={<RoleProtectedRoute role='NGO'><CompletedCampaigns /></RoleProtectedRoute>}/>
+          <Route path='/vol0' element={<RoleProtectedRoute role='NGO'><VolunteerPosition0 /></RoleProtectedRoute>}/>
+          <Route path='/vol1' element={<RoleProtectedRoute role='NGO'><VolunteerPosition1 /></RoleProtectedRoute>}/>
+          <Route path='/vol2' element={<RoleProtectedRoute role='NGO'><VolunteerPosition2 /></RoleProtectedRoute>}/>
+          <Route path='/vol3' element={<RoleProtectedRoute role='NGO'><VolunteerPosition3 /></RoleProtectedRoute>}/>
+          <Route path='/volApproved' element={<RoleProtectedRoute role='NGO'><VolunteerPositionApproved /></RoleProtectedRoute>}/>
+          <Route path='/volRejected' element={<RoleProtectedRoute role='NGO'><VolunteerPositionRejected /></RoleProtectedRoute>}/>
+          <Route path='/volPSDAA' element={<RoleProtectedRoute role='NGO'><VolunteerPositionSeeDetailsApprovedApplication /></RoleProtectedRoute>}/>
+          <Route path='/settingsNGO' element={<RoleProtectedRoute role='NGO'><SettingsNGO /></RoleProtectedRoute>}/>
+          <Route path='/collab' element={<RoleProtectedRoute role='NGO'><Collaboration /></RoleProtectedRoute>}/>
+
+        
+
           <Route path='/donor' element={<DonorLanding />} />
           <Route path='/donor_signin' element={<DonorSignin />} />
           <Route path='/donor_signup' element={<DonorSignup />} />
@@ -58,6 +85,15 @@ function App() {
           <Route path='/rider_signup' element={<RiderSignup />} />
           <Route path='/rider_home' element={<RoleProtectedRoute role='Rider'><RiderDashboard /></RoleProtectedRoute>}/>
           <Route path='/test' element={<Test />} />
+
+          <Route path='vfg1' element= {<RoleProtectedRoute role='Donor'> <VolunteerForGood1/> </RoleProtectedRoute>}/>
+          <Route path='vfg2' element= {<RoleProtectedRoute role='Donor'> <VolunteerForGood2/> </RoleProtectedRoute>}/>
+          <Route path='vfg3' element= {<RoleProtectedRoute role='Donor'> <VolunteerForGood3/> </RoleProtectedRoute>}/>
+
+          <Route path='dvh' element= {<RoleProtectedRoute role='Donor'> <DonateVolunterHistory/> </RoleProtectedRoute>}/>
+          <Route path='dvh2' element= {<RoleProtectedRoute role='Donor'> <DonateVolunterHistory2/> </RoleProtectedRoute>}/>
+
+          <Route path='/settingsDonor' element= {<RoleProtectedRoute role='Donor'> <SettingsDonor/> </RoleProtectedRoute>}/>
         </Routes>
       </AuthContextProvider>
     </div>
@@ -65,3 +101,6 @@ function App() {
 }
 
 export default App;
+
+
+

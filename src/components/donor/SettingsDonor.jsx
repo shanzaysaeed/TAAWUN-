@@ -19,7 +19,7 @@ function SettingsDonor() {
 
                     <div className='p-5 mr-20 flex items-start'>
                         <p className='text-black font-semibold text-2xl mt-4 underline '>Profile</p>
-                        <img src="../components/mohtashim.png" className='rounded-1/2 w-12 h-12 flex-shrink-0 ml-4 mt-2'></img>
+                        <img src="../components/mohtashim.png" alt='LOL' className='rounded-1/2 w-12 h-12 flex-shrink-0 ml-4 mt-2'></img>
                     </div>
 
                 </div>

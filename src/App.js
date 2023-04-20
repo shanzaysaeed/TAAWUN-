@@ -12,6 +12,8 @@ import NgoDashboard from './components/ngo/NgoDashboard';
 import Campaigns from './components/ngo/Campaigns';
 import CompletedCampaigns from './components/ngo/CompletedCampaigns';
 import CreateCampaign from './components/ngo/CreateCampaign';
+import DonationApp from './components/ngo/DonationApp';
+import NonCash from './components/ngo/NonCash';
 import DonorLanding from './components/donor/DonorLanding';
 import DonorSignup from './components/donor/DonorSignup';
 import DonorSignin from './components/donor/DonorSignin';
@@ -42,9 +44,14 @@ import VolunteerPositionSeeDetailsApprovedApplication from './components/ngo/Vol
 import SettingsDonor from './components/donor/SettingsDonor';
 import SettingsNGO from './components/ngo/SettingsNGO';
 import Collaboration from './components/ngo/Collaboration';
+<<<<<<< HEAD
 import Collaboration1 from './components/ngo/Collaboration1';
 import VolunteerPositionClosed from './components/donor/VolunteerPositionClosed';
 import DonationHistory from './components/ngo/DonationHistory';
+=======
+import DonorMapView from './components/donor/MapView';
+import NGOMapView from './components/ngo/MapView';
+>>>>>>> 011d48de6f049ccae4582cf157ebec040e9c6dfc
 
 function App() {
   return (
@@ -58,6 +65,8 @@ function App() {
           <Route path='/ngo_signin' element={<NgoSignin />} />
           <Route path='/ngo_signup' element={<NgoSignup />} />
           <Route path='/ngo_home' element={<RoleProtectedRoute role='NGO'><NgoDashboard /></RoleProtectedRoute>}/>
+          <Route path='/apps' element={<RoleProtectedRoute role='NGO'><DonationApp /></RoleProtectedRoute>}/>
+          <Route path='/noncash_apps' element={<RoleProtectedRoute role='NGO'><NonCash /></RoleProtectedRoute>}/>
           <Route path='/campaigns' element={<RoleProtectedRoute role='NGO'><Campaigns /></RoleProtectedRoute>}/>
           <Route path='/create_camp' element={<RoleProtectedRoute role='NGO'><CreateCampaign /></RoleProtectedRoute>}/>
           <Route path='/comp_camp' element={<RoleProtectedRoute role='NGO'><CompletedCampaigns /></RoleProtectedRoute>}/>
@@ -71,8 +80,12 @@ function App() {
           <Route path='/volClosed' element={<RoleProtectedRoute role='NGO'><VolunteerPositionClosed /></RoleProtectedRoute>}/>
           <Route path='/settingsNGO' element={<RoleProtectedRoute role='NGO'><SettingsNGO /></RoleProtectedRoute>}/>
           <Route path='/collab' element={<RoleProtectedRoute role='NGO'><Collaboration /></RoleProtectedRoute>}/>
+<<<<<<< HEAD
           <Route path='/collab1' element={<RoleProtectedRoute role='NGO'><Collaboration1 /></RoleProtectedRoute>}/>
           <Route path='/donHistory' element={<RoleProtectedRoute role='NGO'><DonationHistory /></RoleProtectedRoute>}/>
+=======
+          <Route path='/ngo_map' element={<RoleProtectedRoute role='NGO'><NGOMapView /></RoleProtectedRoute>}/>
+>>>>>>> 011d48de6f049ccae4582cf157ebec040e9c6dfc
 
         
 
@@ -87,6 +100,8 @@ function App() {
           <Route path='/donate5' element={<RoleProtectedRoute role='Donor'><Donate5 /></RoleProtectedRoute>}/>
           <Route path='/donate5_1' element={<RoleProtectedRoute role='Donor'><Donate51 /></RoleProtectedRoute>}/>
           <Route path='/donate6' element={<RoleProtectedRoute role='Donor'><Donate6 /></RoleProtectedRoute>}/>
+          <Route path='/donor_map' element={<RoleProtectedRoute role='Donor'><DonorMapView /></RoleProtectedRoute>}/>
+          
           <Route path='/rider' element={<RiderLanding />} />
           <Route path='/rider_signin' element={<RiderSignin />} />
           <Route path='/rider_signup' element={<RiderSignup />} />

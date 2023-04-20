@@ -45,7 +45,7 @@ function DonorSideBar() {
                 <p className="px-4"> Donation History </p>
             </button>
 
-            <button onClick={() => {navigate("/donor_home")}} className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-r-3xl">
+            <button onClick={() => {navigate("/donor_map")}} className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-r-3xl">
                 <img className="h-5" src="../components/map.png" alt="Map view" />
                 <p className="px-4"> Map View </p>
             </button>

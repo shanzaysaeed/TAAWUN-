@@ -38,6 +38,7 @@ const Donate51 = () => {
       donatedBy: loggedIn.email,
       donatedAt: Timestamp.fromDate(new Date()),
       type: "Non-Cash",
+      status: "new",
     };
     
     try {

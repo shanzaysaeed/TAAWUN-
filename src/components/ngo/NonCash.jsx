@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import NGOSideBar from "../../views/NGOSideBar";
-import { collection, query, where, getDocs, doc, updateDoc, increment, setDoc } from "firebase/firestore";
+import { collection, query, where, getDocs, doc, updateDoc, setDoc } from "firebase/firestore";
 import { db } from "../../firebase";
 
 const NonCash= () => {

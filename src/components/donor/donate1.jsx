@@ -8,6 +8,7 @@ import CampaignDescription from './CampaignDescription';
 const Donate1 = () => {
     const navigate = useNavigate();
     const loggedIn = JSON.parse(localStorage.getItem('user'))
+    const [searchTerm, setSearchTerm] = useState("");
     const [selectedCampaign, setSelectedCampaign] = useState(null);
     const [createdBy, setCreatedBy] = useState(null);
     const [campaigns, setCampaigns] = useState([]);
@@ -93,7 +94,7 @@ const Donate1 = () => {
 
                     <div className='p-5 mr-20 flex items-start  '>
                         <div className='flex flex-row w-full h-10 mt-2 mr-2 justify-center'>
-                            <input className='p-3 rounded-2xl bg-white border border-black w-5/6 h-8 mt-4' type='text' placeholder='Search'></input>
+                            <input className='p-3 rounded-2xl bg-white border border-black w-5/6 h-8 mt-4' type='text' placeholder='Search' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}></input>
                             <button className='absolute mt-5 ml-28'><img src="../components/search.jpeg" alt= "search" className='w-6 h-6 rounded'></img></button>
                         </div>
                         
@@ -120,13 +121,13 @@ const Donate1 = () => {
                     ) : (
                     <div>
                         <div className='upper-row flex flex-row w-full h-40 mt-2 justify-center'>
-                        {campaigns.slice(0, 3).map((campaign) => (
+                        {campaigns.filter((campaign) => campaign.title.toLowerCase().includes(searchTerm.toLowerCase())).slice(0, 3).map((campaign) => (
                             <div onClick={() => {handleCampaignClick(campaign); setCreatedBy(campaign.createdBy)}} className='flex flex-col border border-black shadow-md w-40 bg-white rounded-2xl h-40 justify-center mr-20'>
                             <button className='flex flex-col mx-4 mb-4 justify-center items-center'>
                                 <img src={logoURL[campaign.createdBy]} alt="logo" className='w-12 h-12'></img>
                                 <p className='font-bold text-lg'>{campaign.createdBy}</p>
                                 <p className='font-semibold text-sm truncate'>{campaign.title}</p>
-                                <button onClick={() => {navigate("/donate2")}} className='bg-[#26235C] text-white rounded-md w-32 mt-2 w-full h-8 hover:bg-purple-500'>Donate Now!</button>
+                                <button onClick={() => {navigate("/donate2", { state: { campaign, createdBy: campaign.createdBy } })}} className='bg-[#26235C] text-white rounded-md w-32 mt-2 w-full h-8 hover:bg-purple-500'>Donate Now!</button>
                             </button>
                             </div>
                         ))}
@@ -142,13 +143,13 @@ const Donate1 = () => {
                         </div>
 
                         <div className='lower-row flex flex-row  w-full h-40 justify-center mt-2'>
-                        {campaigns.slice(3, 6).map((campaign) => (
+                        {campaigns.filter((campaign) => campaign.title.toLowerCase().includes(searchTerm.toLowerCase())).slice(3, 6).map((campaign) => (
                             <div className='flex flex-col border border-black shadow-md w-40 bg-white rounded-2xl h-40 justify-center mr-20'>
                             <button className='flex flex-col mx-4 mb-4 justify-center items-center'>
                                 <img src={logoURL[campaign.createdBy]} alt="logo" className='w-12 h-12'></img>
                                 <p className='font-bold text-lg'>{campaign.createdBy}</p>
                                 <p className='font-semibold text-sm truncate'>{campaign.title}</p>
-                                <button onClick={() => {navigate("/donate2")}} className='bg-[#26235C] text-white rounded-md w-32 mt-2 w-full h-8 hover:bg-purple-500'>Donate Now!</button>
+                                <button onClick={() => {navigate("/donate2", { state: { campaign, createdBy: campaign.createdBy } })}} className='bg-[#26235C] text-white rounded-md w-32 mt-2 w-full h-8 hover:bg-purple-500'>Donate Now!</button>
                             </button>
                             </div>
                         ))}

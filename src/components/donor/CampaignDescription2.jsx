@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import DonorSideBar from '../../views/DonorSideBar';
 
 
-const CampaignDescription = ({campaign, createdBy}) => {
+const CampaignDescription2 = ({campaign, createdBy}) => {
     const loggedIn = JSON.parse(localStorage.getItem('user'))
     const navigate = useNavigate();
     return (
@@ -66,7 +66,7 @@ const CampaignDescription = ({campaign, createdBy}) => {
                             <button onClick={() => window.location.reload()} className="btn px-2">Go back</button>
                         </div>
                         <div className="flex flex-row w-1/8 mt-4 py-2 bg-green-500 hover:bg-green-600 rounded-3xl justify-center items-center">
-                            <button className='px-6' onClick={() => {navigate("/donate2", { state: { campaign, createdBy: campaign.createdBy } })}}>Donate Now</button>
+                            <button className='px-6' onClick={() => {navigate("/donate5_1", { state: { campaign, createdBy: campaign.createdBy } })}}>Donate Now</button>
                         </div>
                     </div>
                 </div>
@@ -76,4 +76,4 @@ const CampaignDescription = ({campaign, createdBy}) => {
 }
 
 
-export default CampaignDescription;
+export default CampaignDescription2;

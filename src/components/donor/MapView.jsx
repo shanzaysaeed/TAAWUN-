@@ -1,6 +1,6 @@
 import React from "react";
 import DonorSideBar from "../../views/DonorSideBar";
-import Map from "../Map/Map";
+import Map from "../map/Map";
 
 const DonorMapView = () => {
   const loggedIn = JSON.parse(localStorage.getItem('user'));

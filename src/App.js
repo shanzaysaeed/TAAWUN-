@@ -44,8 +44,11 @@ import VolunteerPositionSeeDetailsApprovedApplication from './components/ngo/Vol
 import SettingsDonor from './components/donor/SettingsDonor';
 import SettingsNGO from './components/ngo/SettingsNGO';
 import Collaboration from './components/ngo/Collaboration';
-import DonorMapView from './components/donor/MapView';
-import NGOMapView from './components/ngo/MapView';
+import Collaboration1 from './components/ngo/Collaboration1';
+import VolunteerPositionClosed from './components/donor/VolunteerPositionClosed';
+import DonationHistory from './components/ngo/DonationHistory';
+import MapView from './components/ngo/MapView';
+import DMapView from './components/donor/MapView';
 
 function App() {
   return (
@@ -74,9 +77,11 @@ function App() {
           <Route path='/volClosed' element={<RoleProtectedRoute role='NGO'><VolunteerPositionClosed /></RoleProtectedRoute>}/>
           <Route path='/settingsNGO' element={<RoleProtectedRoute role='NGO'><SettingsNGO /></RoleProtectedRoute>}/>
           <Route path='/collab' element={<RoleProtectedRoute role='NGO'><Collaboration /></RoleProtectedRoute>}/>
-          <Route path='/ngo_map' element={<RoleProtectedRoute role='NGO'><NGOMapView /></RoleProtectedRoute>}/>
+          <Route path='/collab1' element={<RoleProtectedRoute role='NGO'><Collaboration1 /></RoleProtectedRoute>}/>
+          <Route path='/donHistory' element={<RoleProtectedRoute role='NGO'><DonationHistory /></RoleProtectedRoute>}/>
 
-        
+          <Route path='/ngo_map' element={<RoleProtectedRoute role='NGO'><MapView/></RoleProtectedRoute>}/>
+
 
           <Route path='/donor' element={<DonorLanding />} />
           <Route path='/donor_signin' element={<DonorSignin />} />
@@ -89,7 +94,7 @@ function App() {
           <Route path='/donate5' element={<RoleProtectedRoute role='Donor'><Donate5 /></RoleProtectedRoute>}/>
           <Route path='/donate5_1' element={<RoleProtectedRoute role='Donor'><Donate51 /></RoleProtectedRoute>}/>
           <Route path='/donate6' element={<RoleProtectedRoute role='Donor'><Donate6 /></RoleProtectedRoute>}/>
-          <Route path='/donor_map' element={<RoleProtectedRoute role='Donor'><DonorMapView /></RoleProtectedRoute>}/>
+          <Route path='/donor_map' element={<RoleProtectedRoute role='Donor'><DMapView /></RoleProtectedRoute>}/>
           
           <Route path='/rider' element={<RiderLanding />} />
           <Route path='/rider_signin' element={<RiderSignin />} />
@@ -111,5 +116,6 @@ function App() {
 }
 
 export default App;
+
 
 

@@ -1,6 +1,6 @@
 import React from "react";
 import NGOSideBar from "../../views/NGOSideBar";
-import Map from "../Map/Map"
+import Map from "../map/Map"
 
 const NGOMapView = () => {
     const loggedIn = JSON.parse(localStorage.getItem('user'));

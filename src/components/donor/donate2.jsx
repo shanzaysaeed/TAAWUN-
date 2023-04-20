@@ -1,8 +1,12 @@
 import React from 'react' 
 import DonorSideBar from '../../views/DonorSideBar';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Donate2 = () => {
+    const location = useLocation();
+    const campaign = location.state.campaign;
+    const createdBy = location.state.createdBy;
+    const loggedIn = JSON.parse(localStorage.getItem('user'))
     const navigate = useNavigate();
     return (
         <div className='flex bg-purple-300 w-screen h-screen'>
@@ -28,8 +32,8 @@ const Donate2 = () => {
                     </div>
 
                     <div className='p-5 mr-20 flex items-start  '>
-                        <p className='text-black font-semibold underline text-lg mt-6 '>Mohtashim</p>
-                        <img src="../components/dp.png" alt= "profile" className='rounded-1/2 w-10 flex-shrink-0 ml-4 mt-4'></img>
+                        <p className='text-black font-semibold underline text-lg mt-6 '>{loggedIn.firstName}</p>
+                        <img src={loggedIn.profilePictureURL} alt="profile" className='rounded-full flex-shrink-0 ml-4 mt-4 w-12 h-12' />
                     </div>
 
                 </div>
@@ -54,21 +58,21 @@ const Donate2 = () => {
                             <div className='flex flex-col  mx-4  mb-4 justify-center items-center'>
                                 <img src="../components/jazz.jpeg" alt="jazz" className=' w-12 h-12 '></img>
                                 <p className='font-bold text-lg mb-2'>JazzCash</p>
-                                <button onClick={() => {navigate("/donate3")}} className='bg-[#26235C] text-white rounded-md  w-full h-8 hover:bg-purple-500'>Select</button>
+                                <button onClick={() => {navigate("/donate3", { state: { campaign, createdBy: createdBy, method: "jazzcash" } })}} className='bg-[#26235C] text-white rounded-md  w-full h-8 hover:bg-purple-500'>Select</button>
                             </div>
                         </div>
                         <div className='flex flex-col border border-black w-40 bg-white rounded-2xl h-40 justify-center mr-20'>
                             <div className='flex flex-col  mx-4  mb-4 justify-center items-center'>
                                 <img src="../components/easypaisa.jpeg" alt="ep" className=' w-12 h-12 '></img>
                                 <p className='font-bold text-lg mb-2'>Easypaisa</p>
-                                <button onClick={() => {navigate("/donate3")}} className='bg-[#26235C] text-white rounded-md  w-full h-8 hover:bg-purple-500'>Select</button>
+                                <button onClick={() => {navigate("/donate3", { state: { campaign, createdBy: createdBy, method: "easypaisa" } })}} className='bg-[#26235C] text-white rounded-md  w-full h-8 hover:bg-purple-500'>Select</button>
                             </div>
                         </div>
                         <div className='flex flex-col border border-black w-40 bg-white rounded-2xl h-40 justify-center'>
                             <div className='flex flex-col  mx-4  mb-4 justify-center items-center'>
                                 <img src="../components/bank.jpeg" alt="bank" className=' w-14 h-14 '></img>
                                 <p className='font-bold text-lg mb-2'>Bank Transfer</p>
-                                <button onClick={() => {navigate("/donate3")}} className='bg-[#26235C] text-white rounded-md  w-full h-8 hover:bg-purple-500'>Select</button>
+                                <button onClick={() => {navigate("/donate3", { state: { campaign, createdBy: createdBy, method: "bank" } })}} className='bg-[#26235C] text-white rounded-md  w-full h-8 hover:bg-purple-500'>Select</button>
                             </div>
                         </div>
                     </div>

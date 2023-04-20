@@ -106,10 +106,10 @@ const Campaigns = () => {
             <h1 className="text-2xl font-semibold">Loading ...</h1>
           </div>
         ) : (
-          <div className="form bg-[#F2F2F2] h-full flex flex-col justify-between mt-8 pt-8 px-8 mb-3 pb-3 rounded-xl">
+          <div className="form bg-[#F2F2F2] h-96 flex flex-col justify-between mt-8 pt-8 px-8 mb-3 pb-3 rounded-xl overflow-y-auto">
             {campaigns.slice(0, 3).map((campaign) => (
               <div key={campaign.id}
-                className="campaign grid grid-cols-6 items-center bg-[#FFFFFF] rounded-md justify-between py-2 px-4">
+                className="campaign grid grid-cols-6 items-center bg-[#FFFFFF] rounded-md justify-between py-2 px-4 my-3">
                   
                 <div className="logo col-span-1 flex justify-center items-center">
                   <img src={logoURL[campaign.createdBy]} alt="Logo" className="w-3/4 h-3/4"/> 

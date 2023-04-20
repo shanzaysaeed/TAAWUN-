@@ -35,12 +35,12 @@ function DonorSideBar() {
                 <p className="px-4"> Donate </p>
             </button>
 
-            <button onClick={() => {navigate("/donor_home")}} className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-r-3xl">
+            <button onClick={() => {navigate("/vfg1")}} className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-r-3xl">
                 <img className="h-5" src="../components/volunteer2.png" alt="Volunteer" />
                 <p className="px-4"> Volunteer </p>
             </button>
 
-            <button onClick={() => {navigate("/donor_home")}} className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-r-3xl">
+            <button onClick={() => {navigate("/dvh")}} className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-r-3xl">
                 <img className="h-5" src="../components/history.png" alt="History" />
                 <p className="px-4"> Donation History </p>
             </button>
@@ -50,7 +50,7 @@ function DonorSideBar() {
                 <p className="px-4"> Map View </p>
             </button>
 
-            <button onClick={() => {navigate("/donor_home")}} className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-r-3xl">
+            <button onClick={() => {navigate("/settingsDonor")}} className="flex items-center mt-1 pl-10 py-2 mr-8 hover:bg-[#e5e1e1] rounded-r-3xl">
                 <img className="h-5" src="../components/settings.png" alt="Setting" />
                 <p className="px-4"> Setting </p>
             </button>

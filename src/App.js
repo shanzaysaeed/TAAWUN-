@@ -44,8 +44,14 @@ import VolunteerPositionSeeDetailsApprovedApplication from './components/ngo/Vol
 import SettingsDonor from './components/donor/SettingsDonor';
 import SettingsNGO from './components/ngo/SettingsNGO';
 import Collaboration from './components/ngo/Collaboration';
+<<<<<<< HEAD
+import Collaboration1 from './components/ngo/Collaboration1';
+import VolunteerPositionClosed from './components/donor/VolunteerPositionClosed';
+import DonationHistory from './components/ngo/DonationHistory';
+=======
 import DonorMapView from './components/donor/MapView';
 import NGOMapView from './components/ngo/MapView';
+>>>>>>> 011d48de6f049ccae4582cf157ebec040e9c6dfc
 
 function App() {
   return (
@@ -71,9 +77,15 @@ function App() {
           <Route path='/volApproved' element={<RoleProtectedRoute role='NGO'><VolunteerPositionApproved /></RoleProtectedRoute>}/>
           <Route path='/volRejected' element={<RoleProtectedRoute role='NGO'><VolunteerPositionRejected /></RoleProtectedRoute>}/>
           <Route path='/volPSDAA' element={<RoleProtectedRoute role='NGO'><VolunteerPositionSeeDetailsApprovedApplication /></RoleProtectedRoute>}/>
+          <Route path='/volClosed' element={<RoleProtectedRoute role='NGO'><VolunteerPositionClosed /></RoleProtectedRoute>}/>
           <Route path='/settingsNGO' element={<RoleProtectedRoute role='NGO'><SettingsNGO /></RoleProtectedRoute>}/>
           <Route path='/collab' element={<RoleProtectedRoute role='NGO'><Collaboration /></RoleProtectedRoute>}/>
+<<<<<<< HEAD
+          <Route path='/collab1' element={<RoleProtectedRoute role='NGO'><Collaboration1 /></RoleProtectedRoute>}/>
+          <Route path='/donHistory' element={<RoleProtectedRoute role='NGO'><DonationHistory /></RoleProtectedRoute>}/>
+=======
           <Route path='/ngo_map' element={<RoleProtectedRoute role='NGO'><NGOMapView /></RoleProtectedRoute>}/>
+>>>>>>> 011d48de6f049ccae4582cf157ebec040e9c6dfc
 
         
 
@@ -110,6 +122,5 @@ function App() {
 }
 
 export default App;
-
 
 

@@ -5,7 +5,7 @@ const NgoDashboard = () => {
   const loggedIn = JSON.parse(localStorage.getItem("user"));
 
   return (
-    <div className="flex bg-[#D5C6FF] w-screen h-screen">
+    <div className="flex bg-purple-300 w-screen h-screen">
       <NGOSideBar />
 
       <div className="right-box w-3/4 px-10 pt-10 flex flex-col">

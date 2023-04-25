@@ -138,13 +138,13 @@ const DonationApp = () => {
   }, [donations]);
 
   return (
-    <div className="flex bg-[#D5C6FF] justify-between">
+    <div className="flex bg-purple-300 justify-between">
       <NGOSideBar />
 
-      <div className="right-box bg-[#D5C6FF] w-3/4 px-10 pt-10 flex flex-col">
+      <div className="right-box bg-purple-300 w-3/4 mt-2 flex flex-col mr-14">
         <div className="flex flex-row w-full justify-between">
-          <div className="flex flex-col mt-6 mx-14">
-            <div className="tracking-tighter text-black font-mono text-4xl font-semibold">
+          <div className="flex flex-col mt-6 ml-14">
+            <div className="tracking-tighter text-black font-mono text-4xl font-bold">
               <p>Donation Applications</p>
             </div>
             <div className="my-14">
@@ -169,20 +169,20 @@ const DonationApp = () => {
             </div>
           </div>
 
-          <div className="p-5 mr-20 flex flex items-start">
+          <div className="p-5 mr-6 flex flex items-start">
             <p className="px-1 text-black font-semibold underline text-lg mt-4 mr-1">
               {loggedIn.name}
             </p>
             <img
               src={loggedIn.logoURL}
               alt="profile"
-              className="rounded-full flex-shrink-0 px-1 h-14 w-16"
+              className="rounded-full flex-shrink-0 px-1 h-12 w-14"
             />
           </div>
         </div>
 
         {loading ? (
-          <div className="flex flex-col mx-14 w-4/5 h-full rounded ">
+          <div className="flex flex-col mx-14 w-full h-full rounded ">
             <h1 className="text-2xl font-semibold">Loading ...</h1>
           </div>
         ) : (
@@ -212,7 +212,7 @@ const DonationApp = () => {
                     <img
                       src="../components/time.jpeg"
                       alt="time"
-                      className="w-4 h-4 mt-2 ml-2"
+                      className="w-4 h-4 mt-2 ml-1"
                     ></img>
                     <p className="font-sans font-semibold text-lg ml-3">
                       {new Date(

@@ -67,34 +67,34 @@ const Campaigns = () => {
   
 
   return (
-    <div className="flex bg-[#D5C6FF] justify-between">
+    <div className="flex bg-purple-300 justify-between">
       <NGOSideBar/>
       
 
-      <div className="right-box bg-[#D5C6FF] w-3/4 px-10 pt-10 flex flex-col">  
+      <div className="right-box bg-purple-300 w-3/4 pt-10 flex flex-col mr-10">  
 
         {/* Top Bar */}
         <div className="top flex justify-between items-center">
           <div className="text-image">
-            <h1 className="text-3xl font-semibold">Campaigns</h1>
+            <h1 className="text-4xl font-bold font-mono tracking-tighter">Campaigns</h1>
           </div>
           <div className="flex items-center">
             <p className="px-1 text-black font-semibold underline text-lg mt-4 mr-1">{loggedIn.name}</p>
-            <img src={loggedIn.logoURL} alt="profile" className='rounded-full flex-shrink-0 px-1 h-14 w-16' />
+            <img src={loggedIn.logoURL} alt="profile" className='rounded-full flex-shrink-0 px-1 h-10 w-12' />
           </div>
         </div>
         
         {/*Page Toggle Buttons*/}
         <div className="buttons flex justify-between pt-8">
           <div className="leftButtons flex">
-            <button onClick={() => navigate("/campaigns")} className="rounded-md bg-purple-400 mr-4 px-2 py-1 text-white border border-black hover:bg-purple-500">
+            <button onClick={() => navigate("/campaigns")} className="rounded-md bg-purple-400 mr-4 px-4 text-white border border-black hover:bg-purple-500">
               On Going
             </button>
-            <button onClick={() => navigate("/comp_camp")} className="rounded-md bg-white text-[#AA8CFF] ml-4 px-2 py-1 border border-black hover:bg-gray-500">
+            <button onClick={() => navigate("/comp_camp")} className="rounded-md bg-white text-purple-400 ml-4 px-4 border border-black hover:bg-gray-500">
               Successful
             </button>
           </div>
-          <div className="rightButton font-semibold rounded-md text-gray-50 bg-[#26235C] px-2 py-1 mr-4 hover:bg-purple-500">
+          <div className="rightButton font-semibold rounded-md text-gray-50 bg-[#26235C] px-4 py-1 mr-4 hover:bg-purple-500 border border-black">
             <a href="/create_camp">Create +</a>
           </div>
         </div>
@@ -112,29 +112,29 @@ const Campaigns = () => {
                 className="campaign grid grid-cols-6 items-center bg-[#FFFFFF] rounded-md justify-between py-2 px-4 my-3">
                   
                 <div className="logo col-span-1 flex justify-center items-center">
-                  <img src={logoURL[campaign.createdBy]} alt="Logo" className="w-3/4 h-3/4"/> 
+                  <img src={logoURL[campaign.createdBy]} alt="Logo" className="w-1/2 h-1/2"/> 
                 </div>
 
                 <div className="text col-span-4 px-8">
-                  <h1 className="text-xl font-semibold">{campaign.title}</h1>
-                  <p className="text-xs">{`${campaign.description.split(' ').slice(0, 20).join(' ')} ...`}</p>
-                  <p className="text-xs"> <b>Amount Needed: </b> Rs. {campaign.amount}/- </p>
-                  <p className="text-xs"> <b>Other Items Required:</b> {`${campaign.details.split(' ').slice(0, 8).join(' ')} ...`} </p>
+                  <h1 className="text-xl font-bold">{campaign.title}</h1>
+                  <p className="text-xs font-semibold">{`${campaign.description.split(' ').slice(0, 20).join(' ')} ...`}</p>
+                  <p className="text-xs font-semibold"> <b>Amount Needed: </b> Rs. {campaign.amount}/- </p>
+                  <p className="text-xs font-semibold"> <b>Other Items Required:</b> {`${campaign.details.split(' ').slice(0, 8).join(' ')} ...`} </p>
                 </div>
 
                 <div className="icons col-span-1 flex flex-col justify-between items-center">
                   <div className="buttons flex">
                     <button className="w-fit mx-1">
-                      <img src="../components/editing.png" alt="Edit Icon" className="w-4/5 h-4/5"/>
+                      <img src="../components/editing.png" alt="Edit Icon" className="w-6 h-6"/>
                     </button>
                     <button className="w-fit mx-1" onClick={() => {handleDelete(campaign.title)}}>
-                      <img src="../components/delete.png" alt="Delete Icon" className="w-4/5 h-4/5"/>
+                      <img src="../components/delete.png" alt="Delete Icon" className="w-6 h-6"/>
                     </button>
 
                   </div>
 
                   <div className="location pt-2 flex items-center justify-center">
-                    <img className="w-1/6" src="../components/placeholder.png" alt="Location Icon" />
+                    <img className="w-4" src="../components/placeholder.png" alt="Location Icon" />
                     <p className="font-bold">{campaign.location.split(",")[0]}</p>
                   </div>
                 </div>

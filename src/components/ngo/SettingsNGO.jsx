@@ -12,16 +12,16 @@ function SettingsNGO() {
             <div className="flex flex-col justify-between w-3/4 h-screen">
                 <div className='flex flex-row w-full justify-between h-20'>
                     <div className='flex flex-col mt-6 mx-14'>
-                        <div className='tracking-tighter text-black font-mono text-4xl font-semibold'>
+                        <div className='tracking-tighter text-black font-mono text-4xl font-bold'>
                             <p>Settings</p>
                         </div>
 
                     </div>
 
 
-                    <div className='p-5 mr-20 flex items-start'>
-                        <p className='text-black font-bold text-2xl mt-4 '>Edhi</p>
-                        <img src="../components/edhilogo.png" alt='HAHAHAA'/>
+                    <div className='p-5 flex items-start'>
+                        <p className='text-black font-bold text-lg mt-4 underline '>Edhi</p>
+                        <img className='w-12 h-14' src="../components/edhilogo.png" alt='HAHAHAA'/>
                     </div>
 
                 </div>
@@ -44,7 +44,7 @@ function SettingsNGO() {
                         <input type='file' placeholder='E' className='p-1 w-2/3 h-10 rounded-md border-black border bg-white'>
                         </input>
 
-                        <button className='w-36 h-10 mt-10 bg-green-500 text-lg rounded-lg'>Save</button>
+                        <button className='w-36 h-10 mt-10 bg-green-500 text-lg rounded-lg border border-black'>Save</button>
                     </div>
                 </div>
                 

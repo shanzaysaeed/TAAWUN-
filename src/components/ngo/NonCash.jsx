@@ -126,15 +126,15 @@ const NonCash= () => {
 
 
     return (
-        <div className="flex bg-[#D5C6FF] justify-between">
+        <div className="flex bg-purple-300 justify-between">
             
             <NGOSideBar/>
 
-            <div className="right-box bg-[#D5C6FF] w-3/4 px-10 pt-10 flex flex-col">
+            <div className="right-box bg-purple-300 w-3/4 mt-4 flex flex-col">
                 <div className='flex flex-row w-full justify-between'>
 
-                    <div className='flex flex-col mt-6 mx-14'>
-                        <div className='tracking-tighter text-black font-mono text-4xl font-semibold'>
+                    <div className='flex flex-col mt-6'>
+                        <div className='tracking-tighter text-black font-mono text-4xl font-bold'>
                             <p>Donation Applications</p>
                         </div>
                         <div className='my-14'>
@@ -145,17 +145,17 @@ const NonCash= () => {
 
                     <div className="p-5 mr-20 flex flex items-start">
                         <p className="px-1 text-black font-semibold underline text-lg mt-4 mr-1">{loggedIn.name}</p>
-                        <img src={loggedIn.logoURL} alt="profile" className='rounded-full flex-shrink-0 px-1 h-14 w-16' />
+                        <img src={loggedIn.logoURL} alt="profile" className='rounded-full flex-shrink-0 px-1 h-10 w-12 mt-2' />
                     </div>
 
                 </div>
 
                 {loading ? (
-                <div className="flex flex-col mx-14 w-4/5 h-full rounded ">
+                <div className="flex flex-col w-11/12 h-full rounded ">
                     <h1 className="text-2xl font-semibold">Loading ...</h1>
                 </div>
                 ) : (
-                <div className="flex flex-col mx-14 w-4/5 h-full rounded ">
+                <div className="flex flex-col w-4/5 h-full rounded ">
                 {donations.slice(0, 3).map((donation) => (
 
                     <div className='flex flex-row bg-[#F2F2F2] w-full h-1/4 rounded-md mb-4'>
@@ -163,7 +163,7 @@ const NonCash= () => {
                             <img src={logoURL[donation.donatedBy]} alt="Donorpicture" className='rounded-full w-20 h-20 mt-3 ml-8'></img>
                         </div>
                         <div className='flex flex-col h-full w-2/3'>
-                            <p className='font-sans text-3xl font-bold mt-1 ml-2'>{names[donation.donatedBy]}</p>
+                            <p className='font-sans text-2xl font-bold mt-1 ml-2'>{names[donation.donatedBy]}</p>
                             <div className='flex flex-row'>
                                 <img src="../components/Amount.png" alt='Amount' className='w-6 h-4 mt-2'></img>
                                 <p className='font-sans font-semibold text-lg ml-3'>{`Address: ${donation.location}`}</p>

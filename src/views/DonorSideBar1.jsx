@@ -18,7 +18,7 @@ function DonorSideBar() {
 
 
   return (
-        <div className="bg-slate-100 h-screen w-80 flex flex-col justify-between items-center">
+        <div className="bg-slate-100 h-screen w-64 flex flex-col justify-between items-center">
 
             <div className="image bg-opacity-100 h-1/6 flex justify-center">
                 <img className="" src="../components/Logo_Final.png" alt="Logo" />

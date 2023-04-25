@@ -56,20 +56,20 @@ const CompletedCampaigns = () => {
   }, [campaigns]);
   
   return (
-    <div className="flex bg-[#D5C6FF] justify-between">
+    <div className="flex bg-purple-300 justify-between">
       <NGOSideBar/>
       
 
-      <div className="right-box bg-[#D5C6FF] w-3/4 px-10 pt-10 flex flex-col">  
+      <div className="right-box bg-purple-300 w-3/4 pt-10 flex flex-col">  
 
         {/* Top Bar */}
         <div className="top flex justify-between items-center">
           <div className="text-image">
-            <h1 className="text-3xl font-semibold">Campaigns</h1>
+            <h1 className="text-4xl font-bold font-mono tracking-tighter">Campaigns</h1>
           </div>
-          <div className="flex items-center">
-            <p className="px-1 text-black font-semibold underline text-lg mt-4 mr-1">{loggedIn.name}</p>
-            <img src={loggedIn.logoURL} alt="profile" className='rounded-full flex-shrink-0 px-1 h-14 w-16' />
+          <div className="flex items-center mr-10">
+            <p className="px-1 text-black font-semibold underline text-lg mt-4">{loggedIn.name}</p>
+            <img src={loggedIn.logoURL} alt="profile" className='rounded-full flex-shrink-0 px-1 h-10 w-12 mt-2' />
           </div>
         </div>
         
@@ -77,14 +77,14 @@ const CompletedCampaigns = () => {
         {/* div for buttons */}
         <div className="buttons flex justify-between pt-8">
           <div className="leftButtons flex">
-            <button onClick={() => navigate("/campaigns")} className="rounded-md bg-white text-[#AA8CFF] px-2 py-1 mr-4 border border-black hover:bg-gray-500">
+            <button onClick={() => navigate("/campaigns")} className="rounded-md bg-white text-[#AA8CFF] px-4 py-1 mr-4 border border-black hover:bg-gray-500">
               On Going
             </button>
-            <button onClick={() => navigate("/comp_camp")} className="rounded-md bg-purple-400 px-2 py-1 ml-4 text-white border border-black hover:bg-purple-500">
+            <button onClick={() => navigate("/comp_camp")} className="rounded-md bg-purple-400 px-4 py-1 ml-4 text-white border border-black hover:bg-purple-500">
               Successful
             </button>
           </div>
-          <div className="rightButton font-semibold rounded-md text-gray-50 bg-[#26235C] px-2 py-1 mr-4 hover:bg-purple-500">
+          <div className="rightButton font-semibold rounded-md text-gray-50 bg-[#26235C] px-4 py-1 mr-12 hover:bg-purple-500 border border-black">
             <a href="/create_camp">Create +</a>
           </div>
         </div>
@@ -92,7 +92,7 @@ const CompletedCampaigns = () => {
         {/* div for gray area */}
 
         {loading ? (
-          <div className="form bg-[#F2F2F2] h-full flex flex-col justify-between mt-8 pt-8 px-8 mb-3 pb-3 rounded-xl">
+          <div className="form bg-[#F2F2F2] h-full  flex flex-col justify-between mt-8 pt-8 mb-3 rounded-xl mr-10">
             <h1 className="text-2xl font-semibold">Loading ...</h1>
           </div>
         ) : (

@@ -1,21 +1,21 @@
 import { Link } from "react-router-dom";
 import React from "react";
-import DonorSideBar from '../../views/DonorSideBar';
+import DonorSideBar from '../../views/DonorSideBar1';
 
 const VolunteerForGood2 = () => {
   return (
-    <div className="flex bg-[#D5C6FF] justify-between">
+    <div className="flex bg-purple-300 justify-between">
       <DonorSideBar/>
 
-      <div className="right-box bg-[#D5C6FF] w-3/4 px-10 pt-10 flex flex-col">
+      <div className="right-box bg-purple-300 w-3/4 pt-10 flex flex-col mr-10">
         <div className="top flex items-center justify-between ">
-          <h1 className="text-3xl font-semibold">Volunteer For Greater Good</h1>
+          <h1 className="text-4xl font-bold font-mono tracking-tighter">Volunteer For Greater Good</h1>
           <div className="flex items-center h-fit w-fit">
-            <p className="text-md font-semibold px-1 w-fit">
+            <p className="text-lg font-semibold px-1 w-fit underline">
               Mohtashim
             </p>
             <img
-              className="px-1 w-14"
+              className="px-1 w-12 mb-2"
               src="../components/mohtashim.png"
               alt="HAHAH"
             />
@@ -39,7 +39,7 @@ const VolunteerForGood2 = () => {
 
           <div class="p2 flex justify-between border-b border-black pb-4">
           <div class="textStuff flex flex-col">
-                <div class="heading h1 text-xl font-bold">
+                <div class="heading h1 text-xl font-bold mb-2">
                     Description
                 </div>
                 <div class="causes flex items-center justify-between">
@@ -59,7 +59,7 @@ const VolunteerForGood2 = () => {
             <button className="bg-[#CCCCCC] hover:bg-[#B6B0B0] text-black font-bold rounded-lg w-24 mx-8 py-1.5">
               <Link to="/vfg1">Go Back</Link>
             </button>
-            <a href="/vfg3" className="bg-[#12D200] hover:bg-[#1EB40F] font-bold rounded-lg flex items-center justify-center px-5">
+            <a href="/vfg3" className="bg-green-500 hover:bg-[#1EB40F] font-bold rounded-lg flex items-center justify-center px-5">
               Apply
             </a>
           </div>

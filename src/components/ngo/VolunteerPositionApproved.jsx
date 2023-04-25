@@ -23,20 +23,20 @@ const VolunteerPositionApproved = () => {
   //       });
   //   };
   return (
-    <div className="flex bg-[#D5C6FF] justify-between">
+    <div className="flex bg-purple-300 justify-between">
       {/* Left Dabba */}
       <NGOSideBar/>
 
       {/* Right wala dabba */}
-      <div className="right-box bg-[#D5C6FF] w-3/4 px-10 pt-10 flex flex-col">
+      <div className="right-box bg-purple-300 w-3/4 px-10 pt-10 flex flex-col">
         <div className="top flex justify-between items-center">
           <div className="text-image">
-            <h1 className="text-3xl font-semibold">Volunteer Position</h1>
+            <h1 className="text-4xl font-bold font-mono tracking-tighter">Volunteer Position</h1>
           </div>
-          <div className="flex items-center">
-            <p className="text-2xl font-semibold px-1">EDHI</p>
+          <div className="flex items-center mr-12">
+            <p className="text-lg font-semibold px-1 underline">Edhi</p>
             <img
-              className="px-1"
+              className="px-1 w-12 h-12"
               src="../components/edhilogo.png"
               alt="HAHAH"
             />

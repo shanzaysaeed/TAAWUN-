@@ -18,7 +18,7 @@ function NGOSideBar() {
 
 
     return (
-    <div className="bg-[#F2F2F2] h-screen w-1/4 flex flex-col justify-between items-center">
+    <div className="bg-[#F2F2F2] h-screen w-64 flex flex-col justify-between items-center">
     {/* Logo's div */}
     <div className="image bg-opacity-100 h-1/6 flex justify-center">
       <img className="" src="../components/Logo_Final.png" alt="haha" />
@@ -50,7 +50,7 @@ function NGOSideBar() {
           src="../components/google-docs.png"
           alt="LMAO"
         />
-        <p className="px-4">
+        <p className="">
           Donation Applications
         </p>
       </button>

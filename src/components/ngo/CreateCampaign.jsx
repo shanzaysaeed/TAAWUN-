@@ -139,28 +139,28 @@ const CreateCampaign = () => {
   
 
   return (
-    <div className="flex bg-[#D5C6FF] justify-between">
+    <div className="flex bg-purple-300 justify-between">
       
       <NGOSideBar/>
 
-      <div className="right-box bg-[#D5C6FF] w-3/4 px-10 pt-10 flex flex-col">
+      <div className="right-box bg-purple-300 w-3/4 pt-10 flex flex-col">
         
         <div className="top flex justify-between items-center">
           <div className="text-image">
-            <h1 className="text-3xl font-bold">Campaigns</h1>
+            <h1 className="text-4xl font-bold font-mono tracking-tighter">Campaigns</h1>
           </div>
-          <div className="flex items-center">
-            <p className="px-1 text-black font-semibold underline text-lg mt-4 mr-1">{loggedIn.name}</p>
-            <img src={loggedIn.logoURL} alt="profile" className='rounded-full flex-shrink-0 px-1 h-14 w-16' />
+          <div className="flex items-center mr-10">
+            <p className="px-2 text-black font-semibold underline text-lg mt-4">{loggedIn.name}</p>
+            <img src={loggedIn.logoURL} alt="profile" className='rounded-full flex-shrink-0 px-1 h-10 w-12 mt-2' />
           </div>
         </div>
 
         <div className="middle pt-5">
-          <p className="font-bold">Create a Campaign</p>
+          <p className="font-bold text-lg">Create a Campaign</p>
         </div>
 
 
-        <div className="bottom pt-3 px-16 w-5/6">
+        <div className="bottom pt-3 px-16 w-5/6 mt-4">
           {error && <p className="text-red-500 ">{error}</p>}
 
           <div className="title pb-2">
@@ -206,7 +206,7 @@ const CreateCampaign = () => {
             <button onClick={() => {navigate("/campaigns")}} className="bg-white  hover:bg-gray-500 text-black font-bold rounded-lg w-24 mx-8 py-1.5">
               Back
             </button>
-            <button className="bg-[#12D200] hover:bg-[#1EB40F] font-bold rounded-lg w-24 mx-8 py-1.5" onClick={handleSubmit} disabled={loading}>
+            <button className="bg-green-500 hover:bg-[#1EB40F] font-bold rounded-lg w-24 mx-8 py-1.5" onClick={handleSubmit} disabled={loading}>
               {loading ? '.....' : 'Post'}
             </button>
           </div>

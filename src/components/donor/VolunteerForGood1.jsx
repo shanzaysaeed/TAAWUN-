@@ -1,22 +1,22 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import DonorSideBar from '../../views/DonorSideBar';
+import DonorSideBar from '../../views/DonorSideBar1';
 
 const VolunteerForGood1 = () => {
   const navigate = useNavigate();
   return (
-    <div className="flex bg-[#D5C6FF] justify-between">
+    <div className="flex bg-purple-300 justify-between">
         <DonorSideBar/>
-      <div className="right-box bg-[#D5C6FF] w-3/4 px-10 pt-10 flex flex-col">
+      <div className="right-box bg-purple-300 w-3/4 mr-10 pt-10 flex flex-col">
         <div className="top flex items-center justify-between ">
-          <h1 className="text-3xl font-semibold">Volunteer For Greater Good</h1>
+          <h1 className="text-4xl font-bold font-mono tracking-tighter">Volunteer For Greater Good</h1>
           <div className="flex items-center h-fit w-fit">
-            <p className="text-md font-semibold px-1 w-fit">
+            <p className="text-lg font-semibold px-1 w-fit underline">
               Mohtashim
             </p>
             <img
-              className="px-1 w-14"
+              className="px-1 w-12 mb-2"
               src="../components/mohtashim.png"
               alt="HAHAH"
             />
@@ -52,13 +52,13 @@ const VolunteerForGood1 = () => {
                 <input
                   type="search"
                   id="default-search"
-                  class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  class="block w-full p-3 pl-10 text-sm text-gray-900 border border-gray-300 rounded-xl bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Search"
                   required
                 />
                 <button
                   type="submit"
-                  class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  class="text-white absolute right-2.5 bottom-2.5 bg-blue-900 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-1 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 border border-black"
                 >
                   Search
                 </button>
@@ -75,7 +75,7 @@ const VolunteerForGood1 = () => {
                   <p className="h1 text-xl font-bold">
                   Fund Raising by Shahid Afridi Foudation
                   </p>
-                  <p className="text-xs">Not for profit</p>
+                  <p className="text-xs font-bold">Not for profit</p>
                   <p className="text-xs">
                     <b>City</b>: Karachi
                   </p>
@@ -85,15 +85,15 @@ const VolunteerForGood1 = () => {
                 </div>
               </div>
               <div className="dets h-full">
-                <p className="text-xs">Activity Applied: 4</p>
-                <p className="text-xs">Volunteers Working: 57</p>
-                <button className="text-xs bg-green-500 p-1 px-2 rounded-md mt-2" onClick={()=>{
+                <p className="text-xs font-bold">Activity Applied: 4</p>
+                <p className="text-xs font-bold">Volunteers Working: 57</p>
+                <button className="text-xs bg-green-500 p-1 px-2 rounded-md mt-2 ml-6 border border-black" onClick={()=>{
                   navigate("/vfg2");
                 }} >
                   Visit Profile
                 </button>
               </div>
-            </div>
+            </div> 
 
             <div class="sample-opportunity2 flex justify-between items-center my-4  bg-white p-2 rounded-lg">
               <div className="flex">
@@ -106,7 +106,7 @@ const VolunteerForGood1 = () => {
                   <p className="h1 text-xl font-bold">
                     Iftaar Drive 
                   </p>
-                  <p className="text-xs">Not for profit</p>
+                  <p className="text-xs font-bold">Not for profit</p>
                   <p className="text-xs">
                     <b>City</b>: Lahore
                   </p>
@@ -116,16 +116,16 @@ const VolunteerForGood1 = () => {
                 </div>
               </div>
               <div className="dets h-full">
-                <p className="text-xs">Volunteers Applied: 90</p>
-                <p className="text-xs">Volunteers Working: 69</p>
-                <button className="text-xs bg-green-500 p-1 px-2 rounded-md mt-2">
+                <p className="text-xs font-bold">Volunteers Applied: 90</p>
+                <p className="text-xs font-bold">Volunteers Working: 69</p>
+                <button className="text-xs bg-green-500 p-1 px-2 rounded-md mt-2 ml-6 border border-black">
                   Visit Profile
                 </button>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </div> 
     </div>
   );
 };

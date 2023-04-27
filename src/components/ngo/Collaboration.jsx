@@ -9,10 +9,10 @@ const Collaboration = () => {
     const [color4, setColor4] = useState("bg-[#BFBFBF]");
     const [color5, setColor5] = useState("bg-[#BFBFBF]");
   return (
-    <div className="flex bg-[#D5C6FF] justify-between">
+    <div className="flex bg-purple-300 justify-between">
       <NGOSideBar />
       <div className="flex flex-col justify-between w-3/4 h-screen">
-        <div className="flex flex-row justify-between items-center px-16 py-5">
+        <div className="flex flex-row justify-between items-center mt-8 mr-14">
           <div className="flex flex-col">
             <p className="tracking-tighter text-black font-mono text-4xl font-semibold">
               Collaborations
@@ -20,17 +20,17 @@ const Collaboration = () => {
           </div>
 
           <div className="flex items-center">
-            <p className="text-black font-bold text-2xl mr-5">Edhi</p>
+            <p className="text-black font-semibold text-lg mr-2 underline">Edhi</p>
             <img
               src="../components/akhuwat.png"
               alt="lol"
-              className="w-1/4"
+              className="w-10 h-10 mb-2"
             ></img>
           </div>
         </div>
 
         <div className="flex flex-row w-full justify-between">
-          <div className="flex flex-col mt-2 mx-14">
+          <div className="flex flex-col">
             <div className="tracking-tight text-black font-sans text-xl font-semibold">
               <p>Please select an NGO you want to collaborate with:</p>
             </div>
@@ -38,7 +38,7 @@ const Collaboration = () => {
         </div>
 
         <div className="h-96 rounded flex flex-col items-center justify-between">
-          <div className="flex justify-between overflow-x-auto w-5/6 h-5/6">
+          <div className="flex justify-between overflow-x-auto w-11/12 h-5/6 mr-14">
             <div className="flex flex-col mr-4 border border-black shadow-md bg-white rounded-2xl justify-center h-full">
               <button className="flex flex-col px-5 justify-center items-center">
                 <img src="../components/akhuwat.png" alt="HAHAHA" />

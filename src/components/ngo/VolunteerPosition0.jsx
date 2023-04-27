@@ -3,18 +3,18 @@ import NGOSideBar from '../../views/NGOSideBar'
 
 const VolunteerPosition0 = () => {
   return (
-    <div className="flex bg-[#D5C6FF] justify-between">
+    <div className="flex bg-purple-300 justify-between">
       <NGOSideBar/>
       {/* Right wala dabba */}
-      <div className="right-box bg-[#D5C6FF] w-3/4 px-10 pt-10 flex flex-col">
+      <div className="right-box bg-purple-300 w-3/4 pt-10 flex flex-col">
         <div className="top flex justify-between items-center">
           <div className="text-image">
-            <h1 className="text-3xl font-semibold">Volunteer Position</h1>
+            <h1 className="text-4xl font-bold font-mono tracking-tighter">Volunteer Position</h1>
           </div>
-          <div className="flex items-center">
-            <p className="text-2xl font-semibold px-1">EDHI</p>
+          <div className="flex items-center mr-10">
+            <p className="text-lg font-semibold px-1 underline">Edhi</p>
             <img
-              className="px-1"
+              className="px-1 w-12 h-12"
               src="../components/edhilogo.png"
               alt="HAHAH"
             />
@@ -23,19 +23,19 @@ const VolunteerPosition0 = () => {
         {/* div for buttons */}
         <div className="buttons flex justify-between pt-8">
           <div className="leftButtons flex">
-            <button className="btn-ongoing rounded-md bg-[#AA8CFF] px-2 py-1 mr-4">
+            <button className="btn-ongoing rounded-md bg-purple-400 px-4 mr-3 border border-black">
               <a href="/cc1">Active</a>
             </button>
-            <a href='/volClosed' className="btn-successful rounded-md bg-[#FFFFFF] px-2 py-1 ml-4">
+            <a href='/volClosed' className="btn-successful rounded-md bg-[#FFFFFF] px-4 ml-4 py-1 border border-black">
               <p>Closed</p>
             </a>
           </div>
-          <div className="rightButton rounded-md text-gray-50 bg-[#26235C] px-2 py-1 mr-4">
+          <div className="rightButton rounded-md text-gray-50 bg-[#26235C] px-4 py-1 mr-12 border border-black">
             <a href="/vol1">Create +</a>
           </div>
         </div>
         {/* div for gray area */}
-        <div className="form bg-[#F2F2F2] h-96 flex flex-col justify-between mt-8 pt-8 px-8 mb-3 pb-3 rounded-xl overflow-y-auto">
+        <div className="form bg-[#F2F2F2] h-3/4 flex flex-col justify-between mt-8 pt-8 px-8 mb-3 pb-3 rounded-xl overflow-y-auto mr-12">
           <div className="campaign flex items-center bg-[#FFFFFF] rounded-md justify-between py-2 px-4">
             <div class="imageAndTextDets flex">
               <img src="../components/edhilogo.png" alt="" />

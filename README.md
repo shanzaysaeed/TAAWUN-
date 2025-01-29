@@ -1,8 +1,6 @@
 # Taawun
-SE Group Project - Spring 2023
+-Developed a disaster management welfare web portal in Pakistan, optimizing non-monetary funds distribution and facilitating seamless donation collection for NGOs.
 
-Sprint-1:
+-Collaborated with NGOs and donors to infuse user-centric principles into the UI design via Figma, ensuring an engaging and usable interface prioritizing user experience.
 
-Sprint-2:
-
-Sprint-3:
+-Developed the front-end infrastructure using React JS, leading testing sprints to ensure consistent interface reliability and optimal performance.
